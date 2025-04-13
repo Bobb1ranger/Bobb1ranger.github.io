@@ -389,16 +389,16 @@ ninja.data = [{
           window.location.href = "/blog/2015/formatting-and-links/";
         
       },
-    },{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
+    },{id: "news-a-long-announcement-with-details",
           title: 'A long announcement with details',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+          description: "",
+          section: "News",},{id: "news-my-work-on-l1-optimal-feedback-control-of-distributed-system-is-submitted-for-review-to-cdc-2025",
+          title: 'My work on l1 optimal feedback control of distributed system is submitted for...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
