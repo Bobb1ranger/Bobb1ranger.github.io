@@ -389,8 +389,8 @@ ninja.data = [{
           window.location.href = "/blog/2015/formatting-and-links/";
         
       },
-    },{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+    },{id: "news-",
+          title: '',
           description: "",
           section: "News",},{id: "news-my-recent-work-quot-algebraic-riccati-equation-approach-for-network-distributed-optimal-h2-synthesis-quot-was-presented-on-conference-of-decision-and-control-2024-in-milan-italy",
           title: 'My recent work &amp;quot;Algebraic Riccati equation approach for network distributed optimal H2 synthesis&amp;quot;...',
