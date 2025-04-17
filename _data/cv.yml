@@ -13,11 +13,8 @@
       institution: University of Minnesota, Minnesota, USA
       year: Aug 2019 - Present
       description: 
-        - Advisor: Dr. Nicola Elia
+        - "Advisor: Dr. Nicola Elia"
         - title: Research Assistant
-          contents:
-            - Networked Distributed Controller Design.
-            - Robust Mean Square Analysis
     - title: Bachelor of Engineering
       institution: Tsinghua University, Beijing, China
       year: 2019
@@ -28,12 +25,12 @@
 - title: Research Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Graduate Research Assistant
+      institution: University of Minnesota, Minnesota, USA
+      year: Aug 2020 - Present
       description:
-        - Description 1.
-        - Description 2.
+        - Networked Distributed Controller Design.
+        - Robust Mean Square Analysis
         - title: Description 3.
           contents:
             - Sub-description 1.
