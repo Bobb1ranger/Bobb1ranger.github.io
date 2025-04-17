@@ -1,14 +1,15 @@
 ---
-layout: about
-title: about
-permalink: /
-subtitle: <a href='#'> Department of Mechanical Engineering, University of Minnesota, Twin Cities </a>. Mobile: 612-552-8249 Email: bobby150928@outlook.com.
+ layout: about
+ title: about
+ permalink: /
+ subtitle: <a href='#'>Department of Mechanical Engineering, University of Minnesota, Twin Cities </a>. Mobile: 612-552-8249 Email: bobby150928@outlook.com.
+ 
+ profile:
+   align: right
+   image: prof_pic.jpg
+   image_circular: false # crops the image to make it circular
+   more_info: >
 
-profile:
-  align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
     <p>2-127 Kenneth H.Keller Hall</p>
     <p>200 Union Street Se</p>
     <p>Minneapolis, MN 55455</p>
