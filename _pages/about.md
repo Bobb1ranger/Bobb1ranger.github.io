@@ -8,10 +8,10 @@ profile:
     align: right
     image: prof_pic.jpg
     image_circular: false # crops the image to make it circular
-    more_info: |
-    <p>2-127 Kenneth H.Keller Hall</p>
-    <p>200 Union Street Se</p>
-    <p>Minneapolis, MN 55455</p>
+    more_info: >
+        <p>2-127 Kenneth H.Keller Hall</p>
+        <p>200 Union Street Se</p>
+        <p>Minneapolis, MN 55455</p>
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
