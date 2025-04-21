@@ -76,7 +76,7 @@ $$\bar{\mathbb{T}}_N (\mathcal{Z}^{-1} \hat{x}) = \mathcal{Z}^{-1}(\frac{1}{z^N}
 With these operators, we define an $\ell_1/\ell_2$ mixed norm, which is used to approximate $\ell_1$ in this paper and provide some useful properties.
 
 
-Consider the vector space $ X = \ell_2^{m \times n} $, which consists of all $ m \times n $ matrices with square-summable entries. While $ X $ shares the same underlying set of elements as $ \ell_2^{m \times n} $, we introduce a different norm, denoted by $ \|\cdot\|_{N,c} $, defined as:
+% Consider the vector space $ X = \ell_2^{m \times n} $, which consists of all $ m \times n $ matrices with square-summable entries. While $ X $ shares the same underlying set of elements as $ \ell_2^{m \times n} $, we introduce a different norm, denoted by $ \|\cdot\|_{N,c} $, defined as:
 
 $$ ||x||_{N,c} \doteq \sqrt{||\mathbb{P}_N x||_1^2 + c ||\mathbb{T}_N x||_2^2}$$
 
@@ -88,4 +88,4 @@ $$c_1 {||x||}_2 <||x||_{N,c} \leq c_2 ||x||_{2}, \forall x\in \ell_2^{m\times n}
 
 The normed space $ \ell_2^{m\times n}, ||\cdot||_{N,c}$'s dual space is $\ell_2^{m\times n},||\cdot||_{{N,c}^{}}$, where
 
-$$||x||_{{N,c}^{}} \doteq \sqrt{||\mathbb{P}_N x||_\infty^2 + \frac{1}{c} ||\mathbb{T}_N x||_2^2}$$
+$$||x||_{{N,c}^{}} \doteq \sqrt{||\mathbb{P}_N x||_\infty^2 + \frac{1}{c} ||\mathbb{T}_N x||_2^2}$$ %
