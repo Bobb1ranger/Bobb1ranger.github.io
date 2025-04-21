@@ -44,11 +44,9 @@ The $l_1$ norm of an linear operator $\hat{G}$ can be interpreted as a peak-to-p
 
 $$\|\hat{G}\|_1 = \sup_{\|w\|_\infty \leq 1} \|\hat{G}w\|_\infty$$
 
-which indicates the worst-case disturbance amplification.
+This indicates the worst-case disturbance amplification.
 
-The dual of a Banach space $X$ is denoted by $X^*$. Given $\mathcal{A}$ a bounded linear operator from $X$ to $Z$. $\mathcal{A}^*\colon Z^* \mapsto X^*$ denotes its adjoint.    
-
-% For any Banach space $X$ and its non-empty closed convex subspace $C$, we use $\mathbb{P}_C x$ to denote the projection of $x\in X$ onto $C$.
+The dual of a Banach space $X$ is denoted by $X^{} $. Given $\mathcal{A}$ a bounded linear operator from $X$ to $Z$. $\mathcal{A}^{}\colon Z^{} \mapsto X^{}$ denotes its adjoint.    
 
 $\ell_1$ problem is usually discussed in the time-domain. So we define the following truncation operators for preparation. Let $\ell^{m\times n}$ be the all sequences of $m \times n$ matrices, $x\in\ell^{m\times n}$.
 For any fixed positive integer $N$, $\mathcal{F}_N = \{0,1,...,N-1\}$, $ \mathbb{P}_N:\ell^{m\times n} \mapsto \mathbb{R}^{m\times n}\times \mathcal{F}_N $ denotes the $N$ level truncation operator.
