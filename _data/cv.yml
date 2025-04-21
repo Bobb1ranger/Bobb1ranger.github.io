@@ -9,12 +9,11 @@
 - title: Education
   type: time_table
   contents:
-    - title: Ph.D. Candidate
+    - title: Ph.D. Candidate, Research Assistant
       institution: University of Minnesota, Minnesota, USA
       year: Aug 2019 - Present
       description: 
-        - "Advisor Dr. Nicola Elia"
-        - title: Research Assistant
+        - Advised by Dr. Nicola Elia
     - title: Bachelor of Engineering
       institution: Tsinghua University, Beijing, China
       year: 2019
