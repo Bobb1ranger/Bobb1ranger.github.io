@@ -77,18 +77,17 @@ With these operators, we define an $\ell_1/\ell_2$ mixed norm, which is used to 
 
 \begin{defn}
 Consider the vector space $ X = \ell_2^{m \times n} $, which consists of all $ m \times n $ matrices with square-summable entries. While $ X $ shares the same underlying set of elements as $ \ell_2^{m \times n} $, we introduce a different norm, denoted by $ \|\cdot\|_{N,c} $, defined as:
-\[
-\|x\|_{N,c} \doteq \sqrt{\|\mathbb{P}_N x\|_1^2 + c \|\mathbb{T}_N x\|_2^2}
-\]
+
+$$ ||x||_{N,c} \doteq \sqrt{||\mathbb{P}_N x||_1^2 + c ||\mathbb{T}_N x||_2^2}$$
 \end{defn}
 When $c=1, N=0$, this norm coincides with the standard $\ell_2$ norm.
 
-For any $N\in Z^+$ and $c>0$, $\|\cdot\|_{N,c}$ is equivalent to $\|\cdot\|_2$ norm. Mathematically, there is a pair of positive scalars $c_1$, $c_2$ such that.
+For any $N\in Z^+$ and $c>0$, $||\cdot||_{N,c}$ is equivalent to $||\cdot||_2$ norm. Mathematically, there is a pair of positive scalars $c_1$, $c_2$ such that.
 
-$$c_1\|x\|_{2} < \|x\|_{N,c} \leq c_2 \|x\|_{2}, \forall x\in \ell_2^{m\times n}.$$
-
-
-The normed space $(\ell_2^{m\times n}, \|\cdot\|_{N,c})$'s dual space is $(\ell_2^{m\times n},\|\cdot\|_{{N,c}^*})$, where
+$$c_1 ||x||_{2} < ||x||_{N,c} \leq c_2 ||x||_{2}, \forall x\in \ell_2^{m\times n}.$$
 
 
-$$\|x\|_{{N,c}^*} \doteq \sqrt{\|\mathbb{P}_N x\|_\infty^2 + \frac{1}{c} \|\mathbb{T}_N x\|_2^2}$$
+The normed space $(\ell_2^{m\times n}, ||\cdot||_{N,c})$'s dual space is $(\ell_2^{m\times n},||\cdot||_{{N,c}^*})$, where
+
+
+$$||x||_{{N,c}^*} \doteq \sqrt{||\mathbb{P}_N x||_\infty^2 + \frac{1}{c} ||\mathbb{T}_N x||_2^2}$$
