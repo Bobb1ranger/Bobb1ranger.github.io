@@ -15,11 +15,11 @@ $$
 \langle H,G\rangle = \sum_{k=-\infty}^{\infty} \mathrm{trace}(G^H[k]H[k]).
 $$
 
-The \(\ell_2^{m\times n}[Z]\) space can be decomposed as the direct sum of two spaces of sequences
+The $\ell_2^{m\times n}[Z]$ space can be decomposed as the direct sum of two spaces of sequences
 
 $$\ell_2^{m\times n}[Z^+] \oplus \ell_2^{m\times n}[Z^-]$$
 
-The unilateral z-transform of \(G\in \ell_2^{m\times n}[Z+]\) is
+The unilateral z-transform of $G\in \ell_2^{m\times n}[Z+]$ is
 
 $$\hat{G}(z) = \sum_{k=0}^\infty G[k] z^{-k}$$
 
@@ -28,8 +28,8 @@ Given any matrix-valued transfer function $\hat{G}:\mathbb{C}\mapsto \mathbb{C}^
 
 $$\mathcal{Z}^{-1}:G[n] = \frac{1}{2\pi j} \oint_\mathcal{C} \hat{G}(z)z^{n-1} dz$$
 
-,where $\mathcal{C}$ is the counter-clock-wise path on the unit circle. We define \(\mathcal{H}_2^{m\times n}\) as the set of all these matrix-value functions that are analytic on \(\mathbb{C}\backslash\mathbb{D}\). \(\mathbb{D}=\{z:|z|<1\}\). 
-For any \(\hat{G}\in\mathcal{H}_2^{m\times n}\), its inverse Z-transform gives a sequence \(\{G\}\in\ell_2^{m\times n}\).
+,where $\mathcal{C}$ is the counter-clock-wise path on the unit circle. We define $\mathcal{H}_2^{m\times n}$ as the set of all these matrix-value functions that are analytic on $\mathbb{C}\backslash\mathbb{D}$. $\mathbb{D}=\{z:|z|<1\}$. 
+For any $\hat{G}\in\mathcal{H}_2^{m\times n}$, its inverse Z-transform gives a sequence $\{G\}\in\ell_2^{m\times n}$.
 We may drop out the superscripts indicating dimensions for notational convenience later on. 
 
 
@@ -40,35 +40,35 @@ We say $\hat{G}$ is in $\ell_1^{m\times n}$ if its impulse sequence $G$ is in $\
 It's well known that the inverse Z-transform of any $\hat{G}\in \mathcal{RH}_2^{m\times n}$ is a sequence in $\ell_1^{m\times n}$.
 
 
-The \(l_1\) norm of an linear operator \(\hat{G}\) can be interpreted as a peak-to-peak induced norm:
+The $l_1$ norm of an linear operator $\hat{G}$ can be interpreted as a peak-to-peak induced norm:
 \begin{equation}
 \|\hat{G}\|_1 = \sup_{\|w\|_\infty \leq 1} \|\hat{G}w\|_\infty
 \end{equation}
 which indicates the worst-case disturbance amplification.
 \end{rem}
-The dual of a Banach space \(X\) is denoted by \(X^*\). Given \(\mathcal{A}\) a bounded linear operator from \(X\) to \(Z\). \(\mathcal{A}^*\colon Z^* \mapsto X^*\) denotes its adjoint.    
+The dual of a Banach space $X$ is denoted by $X^*$. Given $\mathcal{A}$ a bounded linear operator from $X$ to $Z$. $\mathcal{A}^*\colon Z^* \mapsto X^*$ denotes its adjoint.    
 
-% For any Banach space \(X\) and its non-empty closed convex subspace \(C\), we use \(\mathbb{P}_C x\) to denote the projection of \(x\in X\) onto \(C\).
+% For any Banach space $X$ and its non-empty closed convex subspace $C$, we use $\mathbb{P}_C x$ to denote the projection of $x\in X$ onto $C$.
 
-\(\ell_1\) problem is usually discussed in the time-domain. So we define the following truncation operators for preparation. Let \(\ell^{m\times n}\) be the all sequences of \(m \times n\) matrices, \(x\in\ell^{m\times n}\).
-For any fixed positive integer \(N\), \(\mathcal{F}_N = \{0,1,\hdots,N-1\}\), \(\mathbb{P}_N:\ell^{m\times n} \mapsto \mathbb{R}^{m\times n}\times \mathcal{F}_N\) denotes the \(N\) level truncation operator.
+$\ell_1$ problem is usually discussed in the time-domain. So we define the following truncation operators for preparation. Let $\ell^{m\times n}$ be the all sequences of $m \times n$ matrices, $x\in\ell^{m\times n}$.
+For any fixed positive integer $N$, $\mathcal{F}_N = \{0,1,\hdots,N-1\}$, $\mathbb{P}_N:\ell^{m\times n} \mapsto \mathbb{R}^{m\times n}\times \mathcal{F}_N$ denotes the $N$ level truncation operator.
 \[
 \mathbb{P}_N x = 
 \left[x[0],x[1],\hdots,x[N-1]\right]
 \]
-\(\mathbb{T}_N:\ell^{m\times n} \mapsto \ell^{m\times n}\) denotes the tail operator.
+$\mathbb{T}_N:\ell^{m\times n} \mapsto \ell^{m\times n}$ denotes the tail operator.
 \[
 \mathbb{T}_N x = 
 \left[x[N],x[N+1],\hdots\right]
 \]
 
-We let \(y\in \mathbb{R}^{m\times n} \times \mathcal{F}_N\) be an arbitrary \(N\) steps sequence. Define the following operator that makes an infinite sequence by adding zeros: 
-\(\bar{\mathbb{P}}_N: \mathbb{R}^{m\times n} \times \mathcal{F}_N \mapsto \ell^{m\times n}\)
+We let $y\in \mathbb{R}^{m\times n} \times \mathcal{F}_N$ be an arbitrary $N$ steps sequence. Define the following operator that makes an infinite sequence by adding zeros: 
+$\bar{\mathbb{P}}_N: \mathbb{R}^{m\times n} \times \mathcal{F}_N \mapsto \ell^{m\times n}$
 \[
 \bar{\mathbb{P}}_N y = 
 \left[y[0],\hdots,y[N-1],\mathbf{0},\hdots\right]
 \]
-\(\bar{\mathbb{T}}_N:\ell^{m\times n} \mapsto \ell^{m\times n}\) denotes the operator adding \(N\) zeros at the beginning.
+$\bar{\mathbb{T}}_N:\ell^{m\times n} \mapsto \ell^{m\times n}$ denotes the operator adding $N$ zeros at the beginning.
 \[
 \bar{\mathbb{T}}_N x = 
 \left[\mathbf{0},\hdots,\mathbf{0},x[0],x[1],\hdots\right]
@@ -81,17 +81,17 @@ We have some properties of these operators:
 \bar{\mathbb{T}}_N (\mathcal{Z}^{-1} \hat{x}) = \mathcal{Z}^{-1}(\frac{1}{z^N} \hat{x})
 \]
 
-With these operators, we define an \(\ell_1/\ell_2\) mixed norm, which is used to approximate \(\ell_1\) in this paper and provide some useful properties.
+With these operators, we define an $\ell_1/\ell_2$ mixed norm, which is used to approximate $\ell_1$ in this paper and provide some useful properties.
 
 \begin{defn}
-Consider the vector space \( X = \ell_2^{m \times n} \), which consists of all \( m \times n \) matrices with square-summable entries. While \( X \) shares the same underlying set of elements as \( \ell_2^{m \times n} \), we introduce a different norm, denoted by \( \|\cdot\|_{N,c} \), defined as:
+Consider the vector space $ X = \ell_2^{m \times n} $, which consists of all $ m \times n $ matrices with square-summable entries. While $ X $ shares the same underlying set of elements as $ \ell_2^{m \times n} $, we introduce a different norm, denoted by $ \|\cdot\|_{N,c} $, defined as:
 \[
 \|x\|_{N,c} \doteq \sqrt{\|\mathbb{P}_N x\|_1^2 + c \|\mathbb{T}_N x\|_2^2}
 \]
 \end{defn}
-When \(c=1, N=0\), this norm coincides with the standard \(\ell_2\) norm.
+When $c=1, N=0$, this norm coincides with the standard $\ell_2$ norm.
 
-For any \(N\in Z^+\) and \(c>0\), \(\|\cdot\|_{N,c}\) is equivalent to \(\|\cdot\|_2\) norm. Mathematically, there is a pair of positive scalars \(c_1\), \(c_2\) such that.
+For any $N\in Z^+$ and $c>0$, $\|\cdot\|_{N,c}$ is equivalent to $\|\cdot\|_2$ norm. Mathematically, there is a pair of positive scalars $c_1$, $c_2$ such that.
 
 $$c_1\|x\|_{2} < \|x\|_{N,c} \leq c_2 \|x\|_{2}, \forall x\in \ell_2^{m\times n}.$$
 
