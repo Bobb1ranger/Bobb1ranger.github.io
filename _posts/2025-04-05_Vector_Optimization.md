@@ -51,7 +51,7 @@ The dual of a Banach space $X$ is denoted by $X^*$. Given $\mathcal{A}$ a bounde
 % For any Banach space $X$ and its non-empty closed convex subspace $C$, we use $\mathbb{P}_C x$ to denote the projection of $x\in X$ onto $C$.
 
 $\ell_1$ problem is usually discussed in the time-domain. So we define the following truncation operators for preparation. Let $\ell^{m\times n}$ be the all sequences of $m \times n$ matrices, $x\in\ell^{m\times n}$.
-For any fixed positive integer $N$, $\mathcal{F}_N = \{0,1,\hdots,N-1\}$, $\mathbb{P}_N:\ell^{m\times n} \mapsto \mathbb{R}^{m\times n}\times \mathcal{F}_N$ denotes the $N$ level truncation operator.
+For any fixed positive integer $N$, $\mathcal{F}_N = \{0,1,...,N-1\}$, $\mathbb{P}_N:\ell^{m\times n} \mapsto \mathbb{R}^{m\times n}\times \mathcal{F}_N$ denotes the $N$ level truncation operator.
 \[
 \mathbb{P}_N x = 
 \left[x[0],x[1],\hdots,x[N-1]\right]
@@ -64,22 +64,19 @@ $\mathbb{T}_N:\ell^{m\times n} \mapsto \ell^{m\times n}$ denotes the tail operat
 
 We let $y\in \mathbb{R}^{m\times n} \times \mathcal{F}_N$ be an arbitrary $N$ steps sequence. Define the following operator that makes an infinite sequence by adding zeros: 
 $\bar{\mathbb{P}}_N: \mathbb{R}^{m\times n} \times \mathcal{F}_N \mapsto \ell^{m\times n}$
-\[
-\bar{\mathbb{P}}_N y = 
-\left[y[0],\hdots,y[N-1],\mathbf{0},\hdots\right]
-\]
+
+$$\bar{\mathbb{P}}_N y = 
+\left[y[0],\hdots,y[N-1],\mathbf{0},\hdots\right]$$
+
 $\bar{\mathbb{T}}_N:\ell^{m\times n} \mapsto \ell^{m\times n}$ denotes the operator adding $N$ zeros at the beginning.
-\[
-\bar{\mathbb{T}}_N x = 
-\left[\mathbf{0},\hdots,\mathbf{0},x[0],x[1],\hdots\right]
-\]
+
+$$\bar{\mathbb{T}}_N x = 
+\left[\mathbf{0},\hdots,\mathbf{0},x[0],x[1],\hdots\right]$$
+
 We have some properties of these operators:
-\[
-\bar{\mathbb{P}}_N\mathbb{P}_N x +\bar{\mathbb{T}}_N\mathbb{T}_N x =x; \mathbb{T}_N \bar{\mathbb{T}}_N x = x.
-\]
-\[
-\bar{\mathbb{T}}_N (\mathcal{Z}^{-1} \hat{x}) = \mathcal{Z}^{-1}(\frac{1}{z^N} \hat{x})
-\]
+
+$$\bar{\mathbb{P}}_N\mathbb{P}_N x +\bar{\mathbb{T}}_N\mathbb{T}_N x =x; \mathbb{T}_N \bar{\mathbb{T}}_N x = x.$$
+$$\bar{\mathbb{T}}_N (\mathcal{Z}^{-1} \hat{x}) = \mathcal{Z}^{-1}(\frac{1}{z^N} \hat{x})$$
 
 With these operators, we define an $\ell_1/\ell_2$ mixed norm, which is used to approximate $\ell_1$ in this paper and provide some useful properties.
 
