@@ -41,11 +41,11 @@ It's well known that the inverse Z-transform of any $\hat{G}\in \mathcal{RH}_2^{
 
 
 The $l_1$ norm of an linear operator $\hat{G}$ can be interpreted as a peak-to-peak induced norm:
-\begin{equation}
-\|\hat{G}\|_1 = \sup_{\|w\|_\infty \leq 1} \|\hat{G}w\|_\infty
-\end{equation}
+
+$$\|\hat{G}\|_1 = \sup_{\|w\|_\infty \leq 1} \|\hat{G}w\|_\infty$$
+
 which indicates the worst-case disturbance amplification.
-\end{rem}
+
 The dual of a Banach space $X$ is denoted by $X^*$. Given $\mathcal{A}$ a bounded linear operator from $X$ to $Z$. $\mathcal{A}^*\colon Z^* \mapsto X^*$ denotes its adjoint.    
 
 % For any Banach space $X$ and its non-empty closed convex subspace $C$, we use $\mathbb{P}_C x$ to denote the projection of $x\in X$ onto $C$.
