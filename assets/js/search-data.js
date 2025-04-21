@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-a-post-with-image-galleries",
+        },{id: "post-a-post-with-math",
+      
+        title: "a post with math",
+      
+      description: "a quick note from David Luenberger&#39;s book &quot;Optimization by Vector Space Methods&quot;",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/Vector-Optimization/";
+        
+      },
+    },{id: "post-a-post-with-image-galleries",
       
         title: "a post with image galleries",
       
