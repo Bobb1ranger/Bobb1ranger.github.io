@@ -80,12 +80,12 @@ Consider the vector space $ X = \ell_2^{m \times n} $, which consists of all $ m
 
 $$ ||x||_{N,c} \doteq \sqrt{||\mathbb{P}_N x||_1^2 + c ||\mathbb{T}_N x||_2^2}$$
 
-When $c=1, N=0$, this norm coincides with the standard $\ell_2$ norm.
+When $c=1$, $N=0$, this norm coincides with the standard $\ell_2$ norm.
 
 For any $N\in Z^{+}$ and $c>0$, $||\cdot||_{N,c}$ is equivalent to $||\cdot||_2$ norm. Mathematically, there is a pair of positive scalars $c_1$, $c_2$ such that.
 
-$$c_1 ||x||_{2} <||x||_{N,c} \leq c_2 ||x||_{2}, \forall x\in \ell_2^{m\times n}$$
+$$c_1 {||x||}_2 <||x||_{N,c} \leq c_2 ||x||_{2}, \forall x\in \ell_2^{m\times n} $$
 
-The normed space $(\ell_2^{m\times n}, ||\cdot||_{N,c})$'s dual space is $(\ell_2^{m\times n},||\cdot||_{{N,c}^{}})$, where
+The normed space $ \ell_2^{m\times n}, ||\cdot||_{N,c}$'s dual space is $\ell_2^{m\times n},||\cdot||_{{N,c}^{}}$, where
 
 $$||x||_{{N,c}^{}} \doteq \sqrt{||\mathbb{P}_N x||_\infty^2 + \frac{1}{c} ||\mathbb{T}_N x||_2^2}$$
