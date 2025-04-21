@@ -46,7 +46,7 @@ $$\|\hat{G}\|_1 = \sup_{\|w\|_\infty \leq 1} \|\hat{G}w\|_\infty$$
 
 This indicates the worst-case disturbance amplification.
 
-The dual of a Banach space $X$ is denoted by $X^{} $. Given $\mathcal{A}$ a bounded linear operator from $X$ to $Z$. $\mathcal{A}^{}\colon Z^{} \mapsto X^{}$ denotes its adjoint.    
+The dual of a Banach space $X$ is denoted by $X^{} $. Given $\mathcal{A}$, a bounded linear operator from $X$ to $Z$. $\mathcal{A}^{}\colon Z^{} \mapsto X^{}$ denotes its adjoint.    
 
 $\ell_1$ problem is usually discussed in the time-domain. So we define the following truncation operators for preparation. Let $\ell^{m\times n}$ be the all sequences of $m \times n$ matrices, $x\in\ell^{m\times n}$.
 For any fixed positive integer $N$, $\mathcal{F}_N = \{0,1,...,N-1\}$, $ \mathbb{P}_N:\ell^{m\times n} \mapsto \mathbb{R}^{m\times n}\times \mathcal{F}_N $ denotes the $N$ level truncation operator.
@@ -73,10 +73,10 @@ We have some properties of these operators:
 $$\bar{\mathbb{P}}_N\mathbb{P}_N x +\bar{\mathbb{T}}_N\mathbb{T}_N x =x; \mathbb{T}_N \bar{\mathbb{T}}_N x = x.$$
 $$\bar{\mathbb{T}}_N (\mathcal{Z}^{-1} \hat{x}) = \mathcal{Z}^{-1}(\frac{1}{z^N} \hat{x})$$
 
-With these operators, we define an $\ell_1/\ell_2$ mixed norm, which is used to approximate $\ell_1$ in this paper and provide some useful properties.
+With these operators, we define an $\ell_1/\ell_2$ mixed norm, which is used to approximate $\ell_1$ in this paper and provide some valuable properties.
 
 
-% Consider the vector space $ X = \ell_2^{m \times n} $, which consists of all $ m \times n $ matrices with square-summable entries. While $ X $ shares the same underlying set of elements as $ \ell_2^{m \times n} $, we introduce a different norm, denoted by $ \|\cdot\|_{N,c} $, defined as:
+{% Consider the vector space $ X = \ell_2^{m \times n} $, which consists of all $ m \times n $ matrices with square-summable entries. While $ X $ shares the same underlying set of elements as $ \ell_2^{m \times n} $, we introduce a different norm, denoted by $ \|\cdot\|_{N,c} $, defined as:
 
 $$ ||x||_{N,c} \doteq \sqrt{||\mathbb{P}_N x||_1^2 + c ||\mathbb{T}_N x||_2^2}$$
 
@@ -88,4 +88,4 @@ $$c_1 {||x||}_2 <||x||_{N,c} \leq c_2 ||x||_{2}, \forall x\in \ell_2^{m\times n}
 
 The normed space $ \ell_2^{m\times n}, ||\cdot||_{N,c}$'s dual space is $\ell_2^{m\times n},||\cdot||_{{N,c}^{}}$, where
 
-$$||x||_{{N,c}^{}} \doteq \sqrt{||\mathbb{P}_N x||_\infty^2 + \frac{1}{c} ||\mathbb{T}_N x||_2^2}$$ %
+$$||x||_{{N,c}^{}} \doteq \sqrt{||\mathbb{P}_N x||_\infty^2 + \frac{1}{c} ||\mathbb{T}_N x||_2^2}$$ %}
