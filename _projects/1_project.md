@@ -13,7 +13,7 @@ The control theory of cyber-physical systems is important and applicable to many
 To give your project a background in the portfolio page, just add the img tag to the front matter like so:
 
     ---
-    layout: page {% background image %}
+    layout: page 
     title: project
     description: a project with a background image
     img: /assets/img/12.jpg
