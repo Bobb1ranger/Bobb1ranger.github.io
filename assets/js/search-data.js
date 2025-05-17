@@ -411,9 +411,9 @@ ninja.data = [{
             },},{id: "news-my-work-on-l1-optimal-feedback-control-of-distributed-system-is-submitted-for-review-to-cdc-2025",
           title: 'My work on l1 optimal feedback control of distributed system is submitted for...',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "projects-network-distributed-control",
+          title: 'Network distributed control',
+          description: "Study how to design multiple controllers cooperating by communication over a network to better regulate a networked plant.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-project-2",
