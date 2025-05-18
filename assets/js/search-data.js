@@ -416,9 +416,9 @@ ninja.data = [{
           description: "Study how to design multiple controllers cooperating by communication over a network to better regulate a networked plant.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-brand-new-electric-wheel",
+          title: 'Brand New Electric Wheel',
+          description: "Designing a new prototype of in-wheel drive mechanical structure used for EVs/HEVs",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-project-3-with-very-long-name",
