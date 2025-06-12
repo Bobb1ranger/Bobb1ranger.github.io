@@ -37,26 +37,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-a-post-with-math",
+        },{id: "post-normed-vector-space",
       
-        title: "a post with math",
+        title: "Normed Vector Space",
       
       description: "a quick note from David Luenberger&#39;s book &quot;Optimization by Vector Space Methods&quot;",
       section: "Posts",
       handler: () => {
         
           window.location.href = "/blog/2025/Vector-Optimization/";
-        
-      },
-    },{id: "post-a-post-with-image-galleries",
-      
-        title: "a post with image galleries",
-      
-      description: "this is what included image galleries could look like",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2024/photo-gallery/";
         
       },
     },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
@@ -403,8 +392,8 @@ ninja.data = [{
     },{id: "news-due-to-the-pandamic-i-remotely-presented-my-new-work-robust-mean-square-stability-on-european-control-conference-2022",
           title: 'Due to the pandamic, I remotely presented my new work “Robust Mean Square...',
           description: "",
-          section: "News",},{id: "news-my-recent-work-quot-algebraic-riccati-equation-approach-for-network-distributed-optimal-mathcal-h-2-synthesis-quot-was-presented-on-conference-of-decision-and-control-2024-in-milan-italy",
-          title: 'My recent work &amp;quot;Algebraic Riccati equation approach for network distributed optimal $\mathcal{H}_2$ synthesis&amp;quot;...',
+          section: "News",},{id: "news-my-recent-work-quot-algebraic-riccati-equation-approach-for-network-distributed-optimal-h2-synthesis-quot-was-presented-on-conference-of-decision-and-control-2024-in-milan-italy",
+          title: 'My recent work &amp;quot;Algebraic Riccati equation approach for network distributed optimal H2 synthesis&amp;quot;...',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
