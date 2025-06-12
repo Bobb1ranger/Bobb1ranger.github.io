@@ -14,9 +14,10 @@
       year: Aug 2019 - Present
       description: 
         - Advised by Dr. Nicola Elia
+        - Control Theory, Information Theory, Optimization.
     - title: Bachelor of Engineering
       institution: Tsinghua University, Beijing, China
-      year: 2019
+      year: 2015 - 2019
       description:
         - Department of Automotive Engineering
         - Xinya College
@@ -28,12 +29,13 @@
       institution: University of Minnesota, Minnesota, USA
       year: Aug 2020 - Present
       description:
-        - Networked Distributed Controller Design.
-        - Robust Mean Square Analysis
-        - title: Description 3.
+        - title: Networked Distributed Controller Design.
           contents:
             - Sub-description 1.
             - Sub-description 2.
+        - Robust Mean Square Analysis
+        - Description 3.
+          
 
 
 

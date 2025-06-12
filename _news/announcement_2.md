@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My recent work "Algebraic Riccati equation approach for network distributed optimal $\mathcal{H}_2$ synthesis" was presented on Conference of Decision and Control, 2024 in Milan, Italy.
+title: My recent work "Algebraic Riccati equation approach for network distributed optimal H2 synthesis" was presented on Conference of Decision and Control, 2024 in Milan, Italy.
 date: 2024-12-15 16:11:00-0400
 inline: false
 related_posts: false
