@@ -31,8 +31,11 @@
       description:
         - title: Networked Distributed Controller Design.
           contents:
-            - Sub-description 1.
-            - Sub-description 2.
+            - Multi-Agent Systems Modeling - Developed mathematical models for multi-agent environment operating under observation noises and process disturbances, with a focus on distributed decision-making and shared objectives.
+            - Designed H2 oriented Multi - agent Optimal Control Framework - Formulated a dynamic programming-based recursive algorithm that blends optimal control principles with Markovian decision process to address cooperative regulation under communication delays.
+            - Achieved Networked Implementation - Implemented the regulator in network-distributed manner with minimal memory usage, enabling parallel execution.
+            - Multi-Robot Coordination Application - Validated the framework in a cooperative robotics task, achieving a 100% improvement in measuring noise rejection compared to decentralized PID controllers.
+            - Federated Learning Application - Showcased the framework's effectiveness in enhancing convergence rates within distributed training scenarios.
         - Robust Mean Square Analysis
         - Description 3.
           

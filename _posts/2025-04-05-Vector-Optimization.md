@@ -15,6 +15,15 @@ $$
 \langle H,G\rangle = \sum_{k=-\infty}^{\infty} \mathrm{trace}(G^H[k]H[k]).
 $$
 
+The $$\ell_2^{m\times n}[Z]$$ space can be decomposed as the direct sum of two spaces of sequences
+$$
+\ell_2^{m\times n}[Z^+] \oplus \ell_2^{m\times n}[Z^-]
+$$
+. The unilateral z-transform of $$G\in \ell_2^{m\times n}[Z+]$$ is
+$$
+\hat{G}(z) = \sum_{k=0}^\infty G[k] z^{-k}
+$$
+
 $${\mathcal{H}_2^{m \times n}}^\perp$$ is the set of functions $$\hat{G} : \mathbb{C} \to \mathbb{C}^{m \times n}$$ such that
 
 

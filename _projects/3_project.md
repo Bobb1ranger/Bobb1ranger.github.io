@@ -1,81 +1,33 @@
 ---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: Machine Learning(CSCI 5525) Project
+description: Collaborated with Daniel Miao and Zaifu Zhan
+img: assets/img/MLproject/2layers_CNN_cover.png
 importance: 3
 category: work
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+According to the law of large numbers, the sample mean approximates the distribution expectation as the sample size increases. Hoeffding inequality [learningfromdata] shows that the upper bound of the probability of the difference between the sample mean $$\bar{x}$$ and the overall mean $$\mu$$ is greater than $$\epsilon$$ is $$2 \exp (-2 n \epsilon^{2})$$.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+However, even now, in the era of data explosion, there is no guarantee that there will be enough data for all AI problems.  
+For example, in medical image processing, to solve very rare lesions, the sample size is really not enough. Sometimes we even lose access to data because of copyright issues. Thus, we can only design a small sample learning algorithm based on the data we have. How to improve the learning model's accuracy against limited data is a necessary problem we have to deal with. Moreover, this study is also meaningful for improving the robustness of learning algorithms.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+$$
+P(|\bar{x} - \mu| \geq \epsilon) \leq 2 \exp \left(-2 n \epsilon^{2}\right)
+$$
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+However, even in the era of data abundance, many AI tasks suffer from limited data. For example, rare medical conditions yield few training samples, and copyright restrictions often limit data access. Improving model performance under limited data is essential for both accuracy and robustness.
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+Small datasets increase the risk of overfitting—models with low bias and high variance may learn noise rather than signal. Several strategies help mitigate this issue:
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+- **Data Augmentation:** Generates additional training data via geometric transforms, color adjustments, image mixing, GANs, and more.
+- **Ensemble Learning:** Combines multiple models to reduce variance and improve generalization.
+- **Transfer Learning:** Leverages pretrained models as starting points for new tasks with limited data.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+This study evaluated several image classification techniques on the Kaggle 100 Sports dataset. The ensemble method combining three pretrained models (AlexNet, MobileNetv2, and ResNet) achieved the highest accuracy, benefiting from leveraging the strengths of each model. However, this method is computationally expensive compared to single pretrained models. Simple CNNs performed poorly and overfitted, while transfer learning with pretrained networks consistently outperformed them due to effective feature extraction from large-scale training.
 
-{% raw %}
+Data augmentation improves generalization but has limitations. Although ensemble methods enhance accuracy, their computational cost is high. Exploring less expensive ensemble techniques like snapshot learning or boosting could be worthwhile but may sacrifice performance. Overall, transfer learning remains a promising, efficient, and accurate approach for image classification. Future work could focus on developing theoretical frameworks and systematic pipelines to better guide transfer learning across diverse domains.
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+![Figure placeholder](assets/img/placeholder.jpg)
 
-{% endraw %}
+
