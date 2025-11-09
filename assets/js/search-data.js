@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-normed-vector-space",
+        },{id: "post-semidefinite-programming-quick-notes",
+      
+        title: "Semidefinite Programming Quick notes",
+      
+      description: "a quick note of related math preliminaries on the semidefinite programming",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/SDP/";
+        
+      },
+    },{id: "post-normed-vector-space",
       
         title: "Normed Vector Space",
       
