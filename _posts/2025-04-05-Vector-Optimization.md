@@ -5,6 +5,7 @@ date: 2025-04-05 01:41:00-0400
 description: a quick note from David Luenberger's book "Optimization by Vector Space Methods"
 tags: Math, Vector Space, Banach Space, Convex Optimization, Duality,
 categories: sample-posts
+featured: true
 related_posts: false
 ---
 
