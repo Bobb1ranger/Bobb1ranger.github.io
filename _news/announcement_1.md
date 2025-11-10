@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-My work on l1 optimal feedback control of distributed system is submitted for review to CDC 2025.
+My work on $$\ell_1$$ optimal feedback control of distributed system is submitted for review to CDC 2025.
