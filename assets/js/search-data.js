@@ -78,8 +78,8 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-my-work-on-l1-optimal-feedback-control-of-distributed-system-is-submitted-for-review-to-cdc-2025",
-          title: 'My work on l1 optimal feedback control of distributed system is submitted for...',
+            },},{id: "news-my-work-on-ell-1-optimal-feedback-control-of-distributed-system-is-submitted-for-review-to-cdc-2025",
+          title: 'My work on \(\ell_1\) optimal feedback control of distributed system is submitted for...',
           description: "",
           section: "News",},{id: "projects-network-distributed-control",
           title: 'Network distributed control',
