@@ -48,6 +48,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/SDP/";
         
       },
+    },{id: "post-transformer-notes",
+      
+        title: "Transformer Notes",
+      
+      description: "A quick note on Transformer Model",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/assets/pdf/Transformer_Notes.pdf";
+        
+      },
     },{id: "post-normed-vector-space",
       
         title: "Normed Vector Space",
@@ -80,6 +91,9 @@ ninja.data = [{
               window.location.href = "/news/announcement_2/";
             },},{id: "news-my-work-on-ell-1-optimal-feedback-control-of-distributed-system-is-submitted-for-review-to-cdc-2025",
           title: 'My work on \(\ell_1\) optimal feedback control of distributed system is submitted for...',
+          description: "",
+          section: "News",},{id: "news-it-s-my-pleasure-to-announce-that-my-recent-work-on-distributed-ell-1-control-has-been-accepted-by-cdc-2025",
+          title: 'It’s my pleasure to announce that my recent work on distributed \(\ell_1\) control...',
           description: "",
           section: "News",},{id: "projects-network-distributed-control",
           title: 'Network distributed control',
