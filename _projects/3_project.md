@@ -28,6 +28,4 @@ This study evaluated several image classification techniques on the Kaggle 100 S
 
 Data augmentation improves generalization but has limitations. Although ensemble methods enhance accuracy, their computational cost is high. Exploring less expensive ensemble techniques like snapshot learning or boosting could be worthwhile but may sacrifice performance. Overall, transfer learning remains a promising, efficient, and accurate approach for image classification. Future work could focus on developing theoretical frameworks and systematic pipelines to better guide transfer learning across diverse domains.
 
-![Figure placeholder](assets/img/placeholder.jpg)
-
 
