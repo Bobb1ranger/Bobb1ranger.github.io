@@ -48,9 +48,9 @@ ninja.data = [{
           window.location.href = "/blog/2025/DiffusionModel/";
         
       },
-    },{id: "post-time-domain-game-interpretation-of-h-infty-control",
+    },{id: "post-time-domain-game-interpretation-of-optimal-control",
       
-        title: "Time-domain game interpretation of $$H_\infty$$ control",
+        title: "Time-domain game interpretation of optimal control",
       
       description: "A simple, time-domain derivation from the game perspective provides an intuitive understanding of where the $$H_\infty$$ Riccati equation comes from. It&#39;s a direct application of dynamic programming, similar to the LQR derivation.",
       section: "Posts",
@@ -70,15 +70,15 @@ ninja.data = [{
           window.location.href = "/blog/2025/SDP/";
         
       },
-    },{id: "post-transformer-notes",
+    },{id: "post-large-models-and-training-knowledge-points",
       
-        title: "Transformer Notes",
+        title: "Large Models and Training Knowledge Points",
       
       description: "A quick note on Transformer Model",
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/assets/pdf/Transformer_Notes.pdf";
+          window.location.href = "/blog/2025/Notes-Transformer/";
         
       },
     },{id: "post-normed-vector-space",
