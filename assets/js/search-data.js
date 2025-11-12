@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-time-domain-game-interpretation-of-h-infty-control",
+        },{id: "post-a-note-on-diffusion-model-credit-qingyuan-jiang",
+      
+        title: "A note on Diffusion Model (Credit Qingyuan Jiang)",
+      
+      description: "A Study Note Adapted shared from Qingyuan Jiang&#39;s Work.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/DiffusionModel/";
+        
+      },
+    },{id: "post-time-domain-game-interpretation-of-h-infty-control",
       
         title: "Time-domain game interpretation of $$H_\infty$$ control",
       
