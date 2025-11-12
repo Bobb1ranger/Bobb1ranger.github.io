@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-semidefinite-programming-quick-notes",
+        },{id: "post-time-domain-game-interpretation-of-h-infty-control",
+      
+        title: "Time-domain game interpretation of $$H_\infty$$ control",
+      
+      description: "A simple, time-domain derivation from the game perspective provides an intuitive understanding of where the $$H_\infty$$ Riccati equation comes from. It&#39;s a direct application of dynamic programming, similar to the LQR derivation.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/HinfminmaxGame/";
+        
+      },
+    },{id: "post-semidefinite-programming-quick-notes",
       
         title: "Semidefinite Programming Quick notes",
       
