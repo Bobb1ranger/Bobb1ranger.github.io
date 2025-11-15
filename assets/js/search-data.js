@@ -37,9 +37,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-mujoco-learning-notes",
+        },{id: "post-mujoco",
       
-        title: "Mujoco Learning Notes",
+        title: "Mujoco",
       
       description: "Some basic features of Mujoco.",
       section: "Posts",
