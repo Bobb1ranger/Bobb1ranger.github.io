@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-a-note-on-diffusion-model-credit-qingyuan-jiang",
+        },{id: "post-mujoco-notes",
+      
+        title: "Mujoco_notes",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/Mujoco_notes/";
+        
+      },
+    },{id: "post-a-note-on-diffusion-model-credit-qingyuan-jiang",
       
         title: "A note on Diffusion Model (Credit Qingyuan Jiang)",
       
