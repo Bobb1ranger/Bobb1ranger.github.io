@@ -1,23 +1,24 @@
 ---
 layout: post
-title: Mujoco Learning Notes
+title: Mujoco
 date: 2025-11-14 20:14:00-0500
 description: Some basic features of Mujoco.
 tags: Robotics, Simulation, Programming.
 related_posts: false
 ---
 
-# Mujoco overview
+# MuJoCo Overview
 
-MujoCo is a full-featured simulator designed from the ground up for the purpose of **model-based** optimization, and in particular optimization through contacts. Because of its efficiency and high accuracy, MuJoCo makes it possible to evaluate many computationally intensive techniques—such as optimal control, physically consistent state estimation, and system identification—on complex dynamical systems with **contact-rich** behaviors. It also supports more traditional applications, including validating control schemes before deploying them on physical robots, interactive scientific visualization, virtual environments.
+MuJoCo is a full-featured simulator designed from the ground up for the purpose of **model-based** optimization, and in particular optimization through contacts. Because of its efficiency and high accuracy, MuJoCo makes it possible to evaluate many computationally intensive techniques—such as optimal control, physically consistent state estimation, and system identification—on complex dynamical systems with **contact-rich** behaviors. It also supports more traditional applications, including validating control schemes before deploying them on physical robots, interactive scientific visualization, virtual environments.
 
 Key features:
 * Simulation in generalized coordinates, avoiding joint violations
-* Inverse dynamics that are well-defined even in the presence of contacts
+* Inverse dynamics that are well-defined **even in the presence of contacts**.
 * Kinematic constraints treatment.
 * Many types of available actuators.
 * Vast options of ODE solvers and integrators.
 * XML model format (called MJCF) and built-in model compiler. Cross-platform GUI in OpenGL. 
+
 
 # Cmake and its use in MujoCo
 ## What is CMake
@@ -37,14 +38,18 @@ Mujoco uses CMake to configure, build and install its source code. Specifically,
 * Configuring compile options.
 * Installation and packaging. (Let CMake install headers and libraries to a clean, standard layout.)
 
+
+
+
 Difference between URDF and MJCF:
 
-Hotkeys:
+
+
+
+
+
 Convert Solidworks drawings to MJCF
 
-
-## Strength of Mujoco
-* Good at simulating collision and contacting.
 
 ## File Type and Simulation Building Process
 
