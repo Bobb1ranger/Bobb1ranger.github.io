@@ -41,8 +41,6 @@ Mujoco uses CMake to configure, build and install its source code. Specifically,
 
 
 
-Difference between URDF and MJCF:
-
 
 
 
@@ -72,7 +70,9 @@ Option node: simulation configuration.
 * Integrator. Euler is quick, RK4(Runge-Kutta) is accurate.
 * solver 
 
-???what's the difference between integrator and solver
+The difference between integrator and solver:
+* The integrator is responsible for numerical time integration of the system's equations of motion.It uses the current state and computed accelerations/velocities to determine the state at the next time step.
+* The solver is a lower-level component used by the integrator (primarily the semi-implicit Euler variants) to resolve forces and impulses arising from constraints.
 
 Visual node. Lighting conditions and Rendering options.
 Visual map affects the Mouse interactions. Don't need to change in most scenarios.
@@ -83,5 +83,8 @@ Headlights setting.
 asset: construct by vertices/ .obj/ .stl.
 * texture. can load .png as texture.
 * Only "skybox" texture can be directly loaded. All other textures should be instead called in materials.
-
 * <hfield>: Terrain features. Usually, it's loaded from files.
+
+
+
+Difference between URDF and MJCF:
