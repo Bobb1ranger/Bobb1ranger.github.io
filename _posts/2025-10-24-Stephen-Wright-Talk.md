@@ -12,7 +12,7 @@ related_posts: false
 I really enjoyed this insightful talk and the speaker's style of giving lectures. 
 
 Disclaimer:
-This is a summary of Stephen Wright's talk at University of Minnesota on October 24, 2025. The summary was prepared by an attendee and may not capture all details accurately. For complete understanding, please refer to the original [work](https://arxiv.org/abs/2402.05071) or contact the [speaker](https://wrightstephen.github.io/sw_proj//).
+This is a summary of Stephen Wright's talk at University of Minnesota on October 24, 2025. The summary was prepared by an attendee and may not capture all details accurately. For complete understanding, please refer to the original [work](https://arxiv.org/abs/2402.05071) or contact the [speaker](https://wrightstephen.github.io/sw_proj//). This note is still under work.
 
 # Abstract: 
 
