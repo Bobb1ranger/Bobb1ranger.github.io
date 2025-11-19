@@ -81,6 +81,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/SDP/";
         
       },
+    },{id: "post-lecture-note-inexact-fixed-point-iterations-for-min-max-problems",
+      
+        title: "Lecture note - Inexact Fixed-Point Iterations for Min-Max Problems",
+      
+      description: "Keypoints from Stephen Wright&#39;s Talk at University of Minnesota",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/Stephen-Wright-Talk/";
+        
+      },
     },{id: "post-large-models-and-training-knowledge-points",
       
         title: "Large Models and Training Knowledge Points",
