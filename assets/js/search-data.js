@@ -39,7 +39,7 @@ ninja.data = [{
           },
         },{id: "post-ros-2-essentials",
       
-        title: "ROS-2 Essentials",
+        title: "ROS 2 Essentials",
       
       description: "How ROS 2 is different from ROS.",
       section: "Posts",
