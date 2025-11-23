@@ -1,5 +1,6 @@
 {
-  "basics": {
+  "basics": [
+    {
     "name": "Yuanji Zou",
     "image": "",
     "email": "bobby150928@outlook.com",
@@ -15,12 +16,13 @@
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
+        "network": "Instagram",
+        "username": "Yuanji Zou",
         "url": "https://twitter.com/AlbertEinstein"
       }
     ]
-  },
+    }
+  ],
   "volunteer": [
     {
       "organization": "People's Climate March",
@@ -43,7 +45,7 @@
       "startDate": "2019-08-01",
       "endDate(expected)": "2025-05-31",
       "score": "10",
-      "courses": ["Control Theory"],
+      "courses": ["Control Theory"]
     },
     {
       "institution": "Tsinghua University, Beijing, China",
