@@ -76,7 +76,6 @@ The difference between integrator and solver:
 
 Visual node. Lighting conditions and Rendering options.
 Visual map affects the Mouse interactions. Don't need to change in most scenarios.
-Headlights setting.
 
 ## Resources Allocation:
 
