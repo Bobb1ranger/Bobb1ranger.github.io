@@ -3,8 +3,8 @@ layout: post
 title: Mujoco
 date: 2025-11-14 20:14:00-0500
 description: Some basic features of Mujoco.
-tags: Robotics, Simulation, Programming.
-related_posts: false
+tags: robotics, simulation, programming.
+related_posts: true
 ---
 
 # MuJoCo Overview
@@ -29,7 +29,8 @@ CMake is a cross-platform build system generator.
 
 CMake = the tool that prepares the actual build environment, so you can build the same project across many platforms without rewriting build scripts.
 
-## CMake's function in Mujoco
+## CMake's functrelated_posts: false
+  - "/blog/2025/Mujoco_notes"ion in Mujoco
 Mujoco uses CMake to configure, build and install its source code. Specifically, CMake handles several things.
 
 * Building and configuring the Mujoco library. (If we're using precompiled Mujoco binaries, we don't need CMake.)
@@ -47,7 +48,8 @@ Mujoco uses CMake to configure, build and install its source code. Specifically,
 
 
 Convert Solidworks drawings to MJCF
-
+related_posts: false
+  - "/blog/2025/Mujoco_notes"
 
 ## File Type and Simulation Building Process
 
@@ -58,7 +60,8 @@ Note .xml is super easy to program.
 ### Compiling
 ### Visualization Node
 
----
+---related_posts: false
+  - "/blog/2025/Mujoco_notes"
 ### Root Node:
 Compiler node: used for simulation computations.
 * range of physical variables
