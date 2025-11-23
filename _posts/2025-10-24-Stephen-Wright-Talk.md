@@ -72,17 +72,24 @@ The main assumption made is that $$F + G$$ is $$\rho$$-cohypomonotone.
 
 # Preliminaries
 
+## MVI condition and Weak MVI:
+The Minty Variational Inequality (MVI) condition states that there exists a solution $$x^*$$ such that
+
+* Minmax is a special case of NMI
+* Weak MVI holds for y =x*
+
 ## Resolvent:
+Resolvent of an operator $$H: \mathbb{R}^d \rightrightarrows \mathbb{R}^d $$ is defined as $$J_H := (I + H)^{-1}$$.
 
 ## Non-expansive operators
 
-
+Construct firmly non-expansive operator from non-expansive operator
 
 ---
 
 # Algorithm
 
-## Restate as a fixed-point problem
+## (1) Restate as a fixed-point problem
 
 $$ 0 \in (F +G)(x^*)$$ is equivalent to 
 
@@ -93,7 +100,7 @@ $$
 \end{align}
 $$
 
-## Outer Loop
+## (2) Outer Loop
 
 Apply a fixed-point iteration (KM or Halpern) that allows for **inexact** evaluation of the resolvent.
 
@@ -101,31 +108,17 @@ Apply a fixed-point iteration (KM or Halpern) that allows for **inexact** evalua
 * Halpern: $$ x_{k+1} = \beta_k x_0 + (1-\beta_k)((1- \alpha) x_k + \alpha \tilde{J}_{\eta(F + G)}(x_k))$$
 * KM: $$ x_{k+1} = \beta_k x_k + (1-\beta_k)\tilde{J}_{\eta(F + G)}(x_k)$$.
 
-## Inner Loop
+## (3) Inner Loop
 Use an optimal first-order algorithm to calculate $$\tilde{J}_{\eta(F + G)}(x_k)$$, choosing $$\eta$$ to ensure that this subproblem is strongly convex- strongly concave. (Stochastic) extragradient can solve this problem with optimal first-order complexity.
 
-
+### Details:
+* Sublinear convergence rate when there is no exact gradient 
+* FBF Forward-Backward-Forward Algorithm
 
 
 Stochastic Access F via an unbiased oracle Fhat
 
-Cohypmonotone
-
-Minmax is a special case of NMI
-Weak MVI holds for y =x*
-
-Resolvent JH := (I + H)^(-1)
 
 Solve z \in (I _eta(F+G))(z) 
 J \etaF = ( I + \eta F)^(-1) (u,v) =
 Argmin max f(u’ , v’) + ½\eta (u’ - u)^2 - ½\eta(v’-v)^2
-
-Construct firmly non-expansive operator from non-expansive operator
-Fixed point of Resolvent
-
-Apply Halpern
-
-Sublinear convergence rate when there is no exact gradient 
-FBF Forward Backward Forward Algorithm
-
-Outer loop Inexact Halpern Iteration
