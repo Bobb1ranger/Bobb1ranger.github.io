@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-mujoco",
+        },{id: "post-ros-2-essentials",
+      
+        title: "ROS-2 Essentials",
+      
+      description: "How ROS 2 is different from ROS.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/ROS2essential/";
+        
+      },
+    },{id: "post-mujoco",
       
         title: "Mujoco",
       
