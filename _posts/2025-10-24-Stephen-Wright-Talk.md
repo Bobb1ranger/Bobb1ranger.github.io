@@ -3,8 +3,8 @@ layout: post
 title: Lecture note - Inexact Fixed-Point Iterations for Min-Max Problems
 date: 2025-10-24 15:30:00-0500
 description: Keypoints from Stephen Wright's Talk at University of Minnesota
-tags: Math, Convex_Optimization, Duality.
-categories: Optimization_Lectures
+tags: math convex_optimization duality
+categories: optimization-lectures
 featured: false
 related_posts: false
 ---

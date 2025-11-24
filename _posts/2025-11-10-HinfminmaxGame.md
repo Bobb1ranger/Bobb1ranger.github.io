@@ -3,7 +3,7 @@ layout: post
 title: Time-domain game interpretation of optimal control
 date: 2025-11-10 21:06:00+0000
 description: A simple, time-domain derivation from the game perspective provides an intuitive understanding of where the $$H_\infty$$ Riccati equation comes from. It's a direct application of dynamic programming, similar to the LQR derivation.
-tags: control, math, optimization.
+tags: control math optimization
 related_posts: false
 ---
 

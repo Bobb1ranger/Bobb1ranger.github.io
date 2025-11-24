@@ -3,7 +3,7 @@ layout: post
 title: A note on Diffusion Model (Credit Qingyuan Jiang)
 date: 2025-11-11 22:47:00+0000
 description: A Study Note Adapted shared from Qingyuan Jiang's Work.
-tags: AI, ML.
+tags: AI ML
 related_posts: false
 ---
 

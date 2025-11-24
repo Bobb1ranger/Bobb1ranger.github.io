@@ -3,7 +3,7 @@ layout: post
 title: Mujoco
 date: 2025-11-14 20:14:00-0500
 description: Some basic features of Mujoco.
-tags: robotics, simulation, programming.
+tags: robotics simulation programming
 related_posts: true
 ---
 

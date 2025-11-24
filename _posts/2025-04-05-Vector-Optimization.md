@@ -3,8 +3,8 @@ layout: post
 title: Normed Vector Space
 date: 2025-04-05 01:41:00-0400
 description: a quick note from David Luenberger's book "Optimization by Vector Space Methods"
-tags: Math, Vector_Space, Convex_Optimization, Duality.
-categories: sample-posts
+tags: math vector_space optimization duality
+categories: optimization-lectures
 featured: true
 related_posts: false
 ---
