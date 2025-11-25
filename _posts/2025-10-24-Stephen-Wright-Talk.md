@@ -14,7 +14,7 @@ I really enjoyed this insightful talk and the speaker's style of giving lectures
 Disclaimer:
 This is a summary of Stephen Wright's talk at University of Minnesota on October 24, 2025. The summary was prepared by an attendee and may not capture all details accurately. For complete understanding, please refer to the original [work](https://arxiv.org/abs/2402.05071) or contact the [speaker](https://wrightstephen.github.io/sw_proj//). This note is still under work.
 
-# *Abstract*: 
+# Abstract: 
 
 We consider constrained, L-smooth, nonconvex-nonconcave min-max problems either satisfying $$\rho$$ -cohypomonotonicity or admitting a solution to the $$\rho$$-weakly Minty Variational Inequality (MVI), where larger values of the parameter $$\rho$$ > 0 correspond to a greater degree of nonconvexity. Relevant problem classes include two player reinforcement learning and interaction-dominant min-max problems. We proposed inexact variants of Halpern and Krasnoselskii-Mann (KM) iterations and show that they can tolerate more nonconvexity than previously proved.  We also provide stochastic algorithms which can tolerate the same amount of nonconvexity. Complexity results are proved in both cases. (Our improvements come from harnessing the recently proposed "conic nonexpansiveness" property of operators.) Finally, we provide a refined analysis for inexact Halpern iteration and propose a stochastic KM iteration with a multilevel Monte Carlo estimator. This talk represents joint work with Ahmet Alacaoglu and Donghwan Kim.
 
