@@ -22,15 +22,75 @@
       }
     ]
   },
-  "work": [
+  "education": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
+      "institution": "University of Minnesota, Twin Cities, USA",
+      "location": "Minneapolis, USA",
+      "area": "Control Theory",
+      "studyType": "PhD",
+      "startDate": "2019-09-01",
+      "endDate": "2025-02-01",
+      "score": "3.91",
+      "courses": ["Machine Learning", "Robust and Optimal Control", "Reinforcement Learning","Convex Optimization","Signal Processing"]
+    },
+    {
+      "institution": "Tsinghua University, China",
+      "location": "Beijing, China",
+      "area": "Mechanical Engineering",
+      "studyType": "Bachelor",
+      "startDate": "2015-09-01",
+      "endDate": "2019-06-30",
+      "score": "3.71",
+      "courses": ["Machine Design","Solid Mechanics","Fluid Mechanics","Thermodynamics"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "First Prize, Challange Cup National Undergraduate Academic Science and Technology Works Competition",
+      "date": "2019-11-01",
+      "awarder": "Ministry of Education of the People's Republic of China",
+      "url": "",
+      "summary": "Our project 'New Electric Wheel Prototype Design' was awarded the First Prize in the national competition."
+    }
+  ],
+  "publications": [
+    {
+      "name": "A quadratic programming approach for network distributed l1 optimal control",
+      "publisher": "2025 IEEE Conference on Decision and Control",
+      "releaseDate": "2025-12-15",
+      "url": "",
+      "summary": "In this work, we present an approximation approach for solving the distributed l1 output-feedback control problem. We provide tight upper and lower bounds for the optimal cost."
+    },
+    {
+      "name": "Algebraic Riccati equation approach for network distributed optimal H2 synthesis",
+      "publisher": "2024 IEEE Conference on Decision and Control",
+      "releaseDate": "2024-12-15",
+      "url": "https://ieeexplore.ieee.org/document/10886507",
+      "summary": "In this paper, we solve the optimal H2 control problem distributed over networks with an arbitrary graph, with the assumption that the controller network has no delays but only sparsity constraints."
+    },
+    {
+      "name": "A synthesis approach for distributed H2 control problems with communication delays",
+      "publisher": "2024 Allerton Conference",
+      "releaseDate": "2024-09-30",
+      "url": "https://ieeexplore.ieee.org/document/10735288",
+      "summary": "In this paper, we find the solution to the discrete-time optimal H2 control problem distributed over networks with arbitrary graphs that include communication delays."
+    },
+    {
+      "name": "Robust mean square stability",
+      "publisher": "2022 European Control Conference",
+      "releaseDate": "2022-07-06",
+      "url": "https://ieeexplore.ieee.org/document/9838390",
+      "summary": "We extend the robust stability notion of μ to include both deterministic and stochastic uncertainties and provide a computable sufficient condition that guarantees closed-loop Robust Mean Square Stability."
+    }
+  ],
+    "projects": [
+    {
+      "name": "Robust Mean Square Stability",
+      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
+      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
+      "startDate": "2018-01-01",
+      "endDate": "2018-01-01",
+      "url": ""
     }
   ],
   "volunteer": [
@@ -39,119 +99,23 @@
       "location": "Hunan Province, China",
       "position": "Group Leader",
       "url": "",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
-    }
-  ],
-  "education": [
-    {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
-    }
-  ],
-  "awards": [
-    {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
-    },
-    {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
-    },
-    {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
-    },
-    {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Zur Elektrody/namik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
-    },
-    {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
-    },
-    {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
+      "startDate": "2016-04-01",
+      "endDate": "2016-08-01",
+      "summary": "Leader for middle school summer-camp course design. Conducted mental health surveys on lcoal students.",
+      "highlights": ["Awarded First Prize in Tsinghua University Volunteer Service Competition"]
     }
   ],
   "skills": [
     {
       "name": "Physics",
-      "level": "Master",
+      "level": "Profficient",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
+      "keywords": ["Feedback control", "Multi-agent System (AI)", "Deep Reinforcement Learning", "Robotics", "Optimization"]
     }
   ],
   "languages": [
     {
-      "language": "German",
+      "language": "Chinese",
       "fluency": "Native speaker",
       "icon": ""
     },
@@ -163,38 +127,14 @@
   ],
   "interests": [
     {
-      "name": "Physics",
+      "name": "Control Theory and Optimization",
       "icon": "fa-solid fa-tag",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Optimal Control",
+        "Networked Control",
+        "Distributed Optimization",
+        "Multi-robot Systems"
       ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    },
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    }
-  ],
-  "projects": [
-    {
-      "name": "Robust Mean Square Stability",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
     }
   ]
 }
