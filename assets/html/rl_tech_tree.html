@@ -93,6 +93,54 @@
             const nodeMap = new Map();
             data.nodes.forEach(n => nodeMap.set(n.id, n));
 
+            // Build children array based on prerequisites
+            data.nodes.forEach(n => { n.children = []; });
+            data.nodes.forEach(n => {
+                if (n.prerequisites) n.prerequisites.forEach(p => {
+                    const parent = nodeMap.get(p);
+                    if (parent) parent.children.push(n);
+                });
+            });
+
+            // Find roots (nodes without prerequisites)
+            const roots = data.nodes.filter(n => !n.prerequisites || n.prerequisites.length === 0);
+
+            // Horizontal scale (year)
+            const years = data.nodes.map(d => d.year);
+            const minYear = d3.min(years) - 1, maxYear = d3.max(years) + 1;
+            const rowHeight = 100;
+            // Define key "break points" in years and corresponding x positions
+            const yearBreaks = [1957, 1980, 1995, 2002, 2013, 2020, 2024];
+            const xBreaks = [margin.left, 200, 600, 1300, 1400, 2000, width - margin.right];
+            const xScale = d3.scaleLinear()
+                .domain(yearBreaks)
+                .range(xBreaks)
+                .clamp(true);
+
+            // DFS row assignment
+            const rowCounter = {}; // tracks row for each depth
+            function dfs(node, depth = 0) {
+                if (!rowCounter[depth]) rowCounter[depth] = 0;
+                node.row = rowCounter[depth];
+                node.y = node.row * rowHeight + margin.top;  // vertical
+                node.x = xScale(node.year);                  // horizontal
+                rowCounter[depth]++;
+                if (node.children) node.children.forEach(child => dfs(child, depth++));
+            }
+
+            // Run DFS from all roots
+            roots.sort((a, b) => a.year - b.year);
+            roots.forEach(root => dfs(root));
+
+            // Build links
+            const links = [];
+            data.nodes.forEach(n => {
+                if (n.prerequisites) n.prerequisites.forEach(p => {
+                    const parent = nodeMap.get(p);
+                    if (parent) links.push({ source: parent, target: n });
+                });
+            });
+
             // Extract all unique branches for vertical lanes
             const branches = Array.from(new Set(data.nodes.map(d => d.branch)));
             const branchY = d3.scalePoint()
@@ -101,38 +149,11 @@
                 .padding(0.5);
 
             // Extract year range for horizontal axis
-            const years = data.nodes.map(d => d.year);
-            const minYear = d3.min(years) - 1;
-            const maxYear = d3.max(years) + 1;
 
-            // Nonlinear scale: compress early, expand recent
 
-            // Define key "break points" in years and corresponding x positions
-            const yearBreaks = [1957, 1980, 1995, 2002, 2013, 2020, 2024];
-            const xBreaks = [margin.left, 200, 600, 1300, 1400, 2000, width - margin.right];
-
-            // Create piecewise scale
-            const xScale = d3.scaleLinear()
-                .domain(yearBreaks)
-                .range(xBreaks)
-                .clamp(true);
-
-            // Assign coordinates to each node
-            data.nodes.forEach(d => {
-                d.y = branchY(d.branch); // vertical
-                d.x = xScale(d.year);    // horizontal
-            });
 
             // Build links for all prerequisites
-            const links = [];
-            data.nodes.forEach(d => {
-                if (d.prerequisites) {
-                    d.prerequisites.forEach(p => {
-                        const parent = nodeMap.get(p);
-                        if (parent) links.push({ source: parent, target: d });
-                    });
-                }
-            });
+
 
             /* -----------------------------
                Draw links
@@ -190,7 +211,7 @@
                Draw horizontal year axis
             ----------------------------- */
             const xAxis = d3.axisBottom(xScale)
-                .ticks(12)
+                .tickValues([1957, 1983, 1988, 1996, 1998, 2013, 2015, 2017, 2018, 2020, 2024])
                 .tickFormat(d3.format("d"));
 
             const axisGroup = svg.append("g")
@@ -201,7 +222,7 @@
             axisGroup.append("text")
                 .attr("class", "axis-label")
                 .attr("x", width / 2)
-                .attr("y", 50)
+                .attr("y", 60)
                 .attr("text-anchor", "middle")
                 .text("Reinforcement Learning Timeline (Year)");
 
