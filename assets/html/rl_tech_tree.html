@@ -11,8 +11,8 @@
         body {
             margin: 0;
             font-family: system-ui, -apple-system, BlinkMacSystemFont;
-            background: #0f122a;
-            color: #e5e7eb;
+            background: #e9bc8b;
+            color: #bcd1fa;
         }
 
         svg {
@@ -29,14 +29,14 @@
         }
 
         .node circle {
-            r: 30;
-            fill: #1e293b;
-            stroke: #b1d4e2;
-            stroke-width: 2px;
+            r: 35;
+            fill: #499fa4;
+            stroke: #3d4a55;
+            stroke-width: 3px;
         }
 
         .node text {
-            fill: #e5e7eb;
+            fill: #3d4a55;
             font-size: 20px;
             text-anchor: middle;
             pointer-events: none;
@@ -45,7 +45,7 @@
 
         .tooltip {
             position: absolute;
-            background: #020617;
+            background: #3d4a55;
             border: 1px solid #334155;
             padding: 11px;
             border-radius: 6px;
@@ -61,7 +61,7 @@
         }
 
         .x-axis text {
-            fill: #e5e7eb;
+            fill: #3d4a55;
             font-size: 16px;
         }
 
@@ -87,7 +87,7 @@
         /* -----------------------------
            Load JSON
         ----------------------------- */
-        d3.json("tech_tree.json").then(data => {
+        d3.json("tech_tree.json?v=" + Date.now()).then(data => {
 
             // Map nodes by id
             const nodeMap = new Map();
@@ -110,8 +110,8 @@
             const minYear = d3.min(years) - 1, maxYear = d3.max(years) + 1;
             const rowHeight = 300;
             // Define key "break points" in years and corresponding x positions
-            const yearBreaks = [1957, 1985, 1995, 2002, 2013, 2020, 2024];
-            const xBreaks = [margin.left, 200, 700, 1200, 1300, 2200, width - margin.right];
+            const yearBreaks = [1957, 1983, 1995, 2002, 2013, 2020, 2024];
+            const xBreaks = [margin.left, 300, 700, 1200, 1300, 2200, width - margin.right];
             const xScale = d3.scaleLinear()
                 .domain(yearBreaks)
                 .range(xBreaks)
@@ -128,25 +128,20 @@
                 if (!rowCounter[node.year]) rowCounter[node.year] = 0;
                 if (!parentrows[depth]) parentrows[depth] = 0;
                 if (depth > 0) {
-                    parentrows[depth] = parentrows[depth - 1] + kidIndex;
-                }
-                if (rowCounter[node.year] > parentrows[depth]) {
-                    node.row = rowCounter[node.year];
-                }
-                else {
-                    node.row = parentrows[depth];
+                    node.row =
+                        Math.max(parentrows[depth - 1] + kidIndex, rowCounter[node.year]);
+                } else {
+                    node.row = Math.max(kidIndex, rowCounter[node.year]);
                 }
 
-                parentrows[depth] = node.row;
                 node.y = node.row * rowHeight + margin.top;  // vertical
                 node.x = xScale(node.year);                  // horizontal
-                rowCounter[node.year]++;
-                let childrencouter = 0;
+                rowCounter[node.year] = node.row + 1;
+                parentrows[depth] = node.row;
                 if (node.children) {
-                    node.children.sort((a, b) => b.children.length - a.children.length);
-                    node.children.forEach(child => dfs(child, depth + 1, childrencouter++));
+                    node.children.sort((a, b) => b.year - a.year);
+                    node.children.forEach((child, i) => dfs(child, depth + 1, i));
                 }
-                parentrows[depth] = 0;
             }
 
             // Run DFS from all roots
@@ -161,17 +156,6 @@
                     if (parent) links.push({ source: parent, target: n });
                 });
             });
-
-            // Extract all unique branches for vertical lanes
-            const branches = Array.from(new Set(data.nodes.map(d => d.branch)));
-            const branchY = d3.scalePoint()
-                .domain(branches)
-                .range([margin.top, height - margin.bottom])
-                .padding(0.5);
-
-            // Extract year range for horizontal axis
-
-
 
             // Build links for all prerequisites
 
@@ -202,7 +186,9 @@
                 .attr("transform", d => `translate(${d.x}, ${d.y})`);
 
             node.append("circle");
-            node.append("text").text(d => d.id);
+            node.append("text")
+                .text(d => d.id)
+                .style("font-weight", "bold");
 
             /* -----------------------------
                Tooltip
@@ -216,6 +202,7 @@
                 tooltip.style("opacity", 1)
                     .html(`
         <strong>${d.name}</strong> (${d.year})<br><br>
+        <em>Branch:</em><br>${d.branch}<br><br>
         <em>Improvement:</em><br>${d.improvement}<br><br>
         <em>Solves:</em><br>${d.solves}<br><br>
         ${d.equations ? '<em>Equations:</em><br>' + d.equations.join("<br>") + '<br><br>' : ''}
