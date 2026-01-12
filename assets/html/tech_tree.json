@@ -177,6 +177,17 @@
             ]
         },
         {
+            "id": "A3C",
+            "name": "Asynchronous Advantage Actor–Critic",
+            "year": 2016,
+            "branch": "Policy Gradient",
+            "improvement": "Uses multiple asynchronous actor-learners and advantage estimates to stabilize and accelerate actor–critic training.",
+            "solves": "Reduces data correlation and training instability without requiring experience replay.",
+            "prerequisites": [
+                "AC"
+            ]
+        },
+        {
             "id": "TRPO",
             "name": "Trust Region Policy Optimization",
             "year": 2015,
@@ -196,6 +207,17 @@
             "solves": "Simplifies TRPO while retaining stability.",
             "prerequisites": [
                 "TRPO"
+            ]
+        },
+        {
+            "id": "A2C",
+            "name": "Advantage Actor–Critic",
+            "year": 2017,
+            "branch": "Policy Gradient",
+            "improvement": "Synchronous, vectorized version of A3C that aggregates gradients across parallel environments.",
+            "solves": "Improves computational efficiency, reproducibility, and GPU utilization while retaining advantage-based variance reduction.",
+            "prerequisites": [
+                "A3C"
             ]
         },
         {
@@ -240,6 +262,64 @@
             "solves": "Eliminates unstable value estimation in large models.",
             "prerequisites": [
                 "RLHF"
+            ]
+        },
+        {
+            "id": "IL",
+            "name": "Imitation Learning",
+            "year": 1990,
+            "branch": "Imitation Learning",
+            "improvement": "Framework for learning policies from expert demonstrations.",
+            "solves": "Bypasses manual reward engineering by leveraging expert behavior.",
+            "prerequisites": [
+                "MDP"
+            ]
+        },
+        {
+            "id": "BC",
+            "name": "Behavior Cloning",
+            "year": 1989,
+            "branch": "Imitation Learning",
+            "improvement": "Supervised learning of policies from expert demonstrations.",
+            "solves": "Learns policies without explicit reward functions or environment interaction.",
+            "prerequisites": [
+                "MDP"
+            ],
+            "limitations": "Suffers from compounding errors due to covariate shift."
+        },
+        {
+            "id": "IRL",
+            "name": "Inverse Reinforcement Learning",
+            "year": 2000,
+            "branch": "Imitation Learning",
+            "improvement": "Infers reward functions from expert demonstrations.",
+            "solves": "Enables generalization beyond demonstrated trajectories.",
+            "prerequisites": [
+                "IL"
+            ],
+            "limitations": "Ill-posed without additional assumptions or regularization."
+        },
+        {
+            "id": "GAIL",
+            "name": "Generative Adversarial Imitation Learning",
+            "year": 2016,
+            "branch": "Imitation Learning",
+            "improvement": "Adversarial training to match expert state–action distributions.",
+            "solves": "Avoids explicit reward recovery while outperforming behavior cloning.",
+            "prerequisites": [
+                "IRL",
+                "TRPO"
+            ]
+        },
+        {
+            "id": "DAGGER",
+            "name": "DAgger",
+            "year": 2011,
+            "branch": "Imitation Learning",
+            "improvement": "Dataset aggregation via iterative expert relabeling.",
+            "solves": "Mitigates covariate shift in behavior cloning.",
+            "prerequisites": [
+                "BC"
             ]
         }
     ]
