@@ -122,12 +122,13 @@
             const rowCounter = {}; // tracks row for each depth
             const parentrows = {};
             parentrows[0] = 0;
-            function dfs(node, depth = 0) {
+            function dfs(node, depth = 0, kidIndex = 0) {
                 if (visited.has(node.id)) return; // skip if already processed
                 visited.add(node.id);
                 if (!rowCounter[node.year]) rowCounter[node.year] = 0;
-                if (depth > 0 && !parentrows[depth]) {
-                    parentrows[depth] = parentrows[depth - 1];
+                if (!parentrows[depth]) parentrows[depth] = 0;
+                if (depth > 0) {
+                    parentrows[depth] = parentrows[depth - 1] + kidIndex;
                 }
                 if (rowCounter[node.year] > parentrows[depth]) {
                     node.row = rowCounter[node.year];
@@ -140,7 +141,11 @@
                 node.y = node.row * rowHeight + margin.top;  // vertical
                 node.x = xScale(node.year);                  // horizontal
                 rowCounter[node.year]++;
-                if (node.children) node.children.forEach(child => dfs(child, depth + 1));
+                let childrencouter = 0;
+                if (node.children) {
+                    node.children.sort((a, b) => b.children.length - a.children.length);
+                    node.children.forEach(child => dfs(child, depth + 1, childrencouter++));
+                }
                 parentrows[depth] = 0;
             }
 
