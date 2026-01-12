@@ -158,7 +158,17 @@
             });
 
             // Build links for all prerequisites
-
+            svg.append("defs").append("marker")
+                .attr("id", "arrowhead")
+                .attr("viewBox", "0 -5 10 10")  // SVG coordinate system
+                .attr("refX", 10)               // How far from the end of the line to place the tip
+                .attr("refY", 0)
+                .attr("markerWidth", 4)         // Size of the marker
+                .attr("markerHeight", 4)
+                .attr("orient", "auto")         // Rotates the marker along the path
+                .append("path")
+                .attr("d", "M0,-5L10,0L0,5")  // Draw a triangle
+                .attr("fill", "#64748b");   // Same color as your link
 
             /* -----------------------------
                Draw links
@@ -169,11 +179,12 @@
                 .append("path")
                 .attr("class", "link")
                 .attr("d", d => {
-                    return `M${d.source.x},${d.source.y} 
-              C${d.source.x + 50},${d.source.y} 
-               ${d.target.x - 50},${d.target.y} 
-               ${d.target.x},${d.target.y}`;
-                });
+                    return `M${d.source.x + 28},${d.source.y + 21} 
+                            C${d.source.x + 60},${d.source.y + 20} 
+                            ${d.target.x - 50},${d.target.y + 50} 
+                            ${d.target.x - 32},${d.target.y + 14}`;
+                })
+                .attr("marker-end", "url(#arrowhead)");
 
             /* -----------------------------
                Draw nodes
