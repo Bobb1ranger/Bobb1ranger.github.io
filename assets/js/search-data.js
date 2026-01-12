@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-ros-2-essentials",
+        },{id: "post-reinforcement-learning-tech-tree",
+      
+        title: "Reinforcement Learning Tech Tree",
+      
+      description: "This is a little tech tree I&#39;ve made to understand the landscape of reinforcement learning.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/Reinforcement-Learning-TechTree/";
+        
+      },
+    },{id: "post-ros-2-essentials",
       
         title: "ROS 2 Essentials",
       
