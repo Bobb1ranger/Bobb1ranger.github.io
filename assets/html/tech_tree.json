@@ -1,0 +1,246 @@
+{
+    "nodes": [
+        {
+            "id": "MDP",
+            "name": "Markov Decision Process",
+            "year": 1957,
+            "branch": "Foundations",
+            "improvement": "Formalizes sequential decision-making under uncertainty.",
+            "solves": "Provides a unified mathematical framework for control and learning.",
+            "equations": [
+                "Bellman expectation equation",
+                "Bellman optimality equation"
+            ],
+            "references": [
+                "Bellman (1957)"
+            ]
+        },
+        {
+            "id": "DP",
+            "name": "Dynamic Programming",
+            "year": 1957,
+            "branch": "Foundations",
+            "improvement": "Solves MDPs exactly with known models.",
+            "solves": "Computes optimal policies when transition dynamics are known.",
+            "prerequisites": [
+                "MDP"
+            ],
+            "limitations": "Requires full model and state enumeration."
+        },
+        {
+            "id": "MC",
+            "name": "Monte Carlo Methods",
+            "year": 1983,
+            "branch": "Value-Based",
+            "improvement": "Estimates returns from sampled episodes.",
+            "solves": "Model-free policy evaluation.",
+            "prerequisites": [
+                "MDP"
+            ],
+            "limitations": "High variance, episodic only."
+        },
+        {
+            "id": "TD",
+            "name": "Temporal-Difference Learning",
+            "year": 1988,
+            "branch": "Value-Based",
+            "improvement": "Bootstraps value estimates using partial trajectories.",
+            "solves": "Online learning without waiting for episode termination.",
+            "prerequisites": [
+                "MDP"
+            ],
+            "equations": [
+                "TD error"
+            ]
+        },
+        {
+            "id": "SARSA",
+            "name": "SARSA",
+            "year": 1996,
+            "branch": "Value-Based",
+            "improvement": "On-policy TD control.",
+            "solves": "Learns action-values while following the current policy.",
+            "prerequisites": [
+                "TD"
+            ],
+            "equations": [
+                "Q(s,a) ← r + γQ(s',a')"
+            ]
+        },
+        {
+            "id": "QLEARNING",
+            "name": "Q-learning",
+            "year": 1998,
+            "branch": "Value-Based",
+            "improvement": "Off-policy TD control using greedy bootstrap.",
+            "solves": "Decouples exploration from optimal policy learning.",
+            "prerequisites": [
+                "TD"
+            ],
+            "equations": [
+                "Q(s,a) ← r + γ max_a Q(s',a)"
+            ]
+        },
+        {
+            "id": "FA",
+            "name": "Function Approximation",
+            "year": 1990,
+            "branch": "Value-Based",
+            "improvement": "Generalizes value functions beyond tabular form.",
+            "solves": "Scales RL to large or continuous state spaces.",
+            "prerequisites": [
+                "TD"
+            ],
+            "limitations": "Can destabilize TD learning."
+        },
+        {
+            "id": "DQN",
+            "name": "Deep Q-Network",
+            "year": 2013,
+            "branch": "Deep RL",
+            "improvement": "Neural Q-functions with replay and target networks.",
+            "solves": "Stabilizes Q-learning with function approximation.",
+            "prerequisites": [
+                "QLEARNING",
+                "FA"
+            ],
+            "references": [
+                "Mnih et al. (2013)"
+            ]
+        },
+        {
+            "id": "DOUBLE_DQN",
+            "name": "Double DQN",
+            "year": 2015,
+            "branch": "Deep RL",
+            "improvement": "Separates action selection from evaluation.",
+            "solves": "Reduces overestimation bias in Q-learning.",
+            "prerequisites": [
+                "DQN"
+            ]
+        },
+        {
+            "id": "DUELING_DQN",
+            "name": "Dueling Networks",
+            "year": 2016,
+            "branch": "Deep RL",
+            "improvement": "Decomposes value and advantage functions.",
+            "solves": "Improves learning efficiency in states with similar actions.",
+            "prerequisites": [
+                "DQN"
+            ]
+        },
+        {
+            "id": "DIST_Q",
+            "name": "Distributional RL",
+            "year": 2017,
+            "branch": "Deep RL",
+            "improvement": "Models return distributions instead of expectations.",
+            "solves": "Captures risk and uncertainty in value estimation.",
+            "prerequisites": [
+                "DQN"
+            ]
+        },
+        {
+            "id": "REINFORCE",
+            "name": "REINFORCE",
+            "year": 1992,
+            "branch": "Policy Gradient",
+            "improvement": "Direct gradient ascent on expected return.",
+            "solves": "Avoids value-function maximization.",
+            "prerequisites": [
+                "MDP"
+            ],
+            "limitations": "Very high variance."
+        },
+        {
+            "id": "AC",
+            "name": "Actor–Critic",
+            "year": 2000,
+            "branch": "Policy Gradient",
+            "improvement": "TD-based baseline for policy gradients.",
+            "solves": "Reduces variance and improves convergence.",
+            "prerequisites": [
+                "REINFORCE",
+                "TD"
+            ]
+        },
+        {
+            "id": "NPG",
+            "name": "Natural Policy Gradient",
+            "year": 2001,
+            "branch": "Policy Optimization",
+            "improvement": "Uses Fisher information geometry.",
+            "solves": "Makes policy updates invariant to parameterization.",
+            "prerequisites": [
+                "AC"
+            ]
+        },
+        {
+            "id": "TRPO",
+            "name": "Trust Region Policy Optimization",
+            "year": 2015,
+            "branch": "Policy Optimization",
+            "improvement": "Explicit KL-constrained policy updates.",
+            "solves": "Prevents catastrophic policy collapse.",
+            "prerequisites": [
+                "NPG"
+            ]
+        },
+        {
+            "id": "PPO",
+            "name": "Proximal Policy Optimization",
+            "year": 2017,
+            "branch": "Policy Optimization",
+            "improvement": "Clipped surrogate objective.",
+            "solves": "Simplifies TRPO while retaining stability.",
+            "prerequisites": [
+                "TRPO"
+            ]
+        },
+        {
+            "id": "MAXENT",
+            "name": "Maximum Entropy RL",
+            "year": 2017,
+            "branch": "Exploration",
+            "improvement": "Augments reward with policy entropy.",
+            "solves": "Encourages robust exploration.",
+            "prerequisites": [
+                "AC"
+            ]
+        },
+        {
+            "id": "SAC",
+            "name": "Soft Actor-Critic",
+            "year": 2018,
+            "branch": "Continuous Control",
+            "improvement": "Off-policy maximum-entropy actor–critic.",
+            "solves": "Stable learning in continuous, high-dimensional control.",
+            "prerequisites": [
+                "MAXENT"
+            ]
+        },
+        {
+            "id": "RLHF",
+            "name": "RL from Human Feedback",
+            "year": 2020,
+            "branch": "LLM Alignment",
+            "improvement": "Optimizes policies using learned reward models.",
+            "solves": "Aligns language models with human preferences.",
+            "prerequisites": [
+                "PPO"
+            ]
+        },
+        {
+            "id": "GRPO",
+            "name": "Group Relative Policy Optimization",
+            "year": 2024,
+            "branch": "LLM Alignment",
+            "improvement": "Critic-free relative advantage optimization.",
+            "solves": "Eliminates unstable value estimation in large models.",
+            "prerequisites": [
+                "RLHF"
+            ]
+        }
+    ]
+}
