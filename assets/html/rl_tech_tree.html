@@ -111,12 +111,18 @@
             const rowHeight = 300;
             // Define key "break points" in years and corresponding x positions
             const yearBreaks = [1957, 1983, 1995, 2002, 2013, 2020, 2024];
-            const xBreaks = [margin.left, 300, 700, 1200, 1300, 2200, width - margin.right];
+            const xFractions = [0.00, 0.18, 0.38, 0.60, 0.72, 0.88, 1.00];
+
+            const usableWidth = width - margin.left - margin.right;
+
+            const xBreaks = xFractions.map(f =>
+            margin.left + f * usableWidth
+            );
             const xScale = d3.scaleLinear()
                 .domain(yearBreaks)
                 .range(xBreaks)
                 .clamp(true);
-
+            
             // DFS row assignment
             const visited = new Set(); // global set to track visited nodes
             const rowCounter = {}; // tracks row for each depth
