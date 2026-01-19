@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-reinforcement-learning-tech-tree",
+        },{id: "post-kalman-filter-recap",
+      
+        title: "Kalman Filter Recap",
+      
+      description: "A recap of the Kalman Filter algorithm for state estimation. It also covers how it is related to the optimal state-feedback control problem.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/KalmanFilter/";
+        
+      },
+    },{id: "post-reinforcement-learning-tech-tree",
       
         title: "Reinforcement Learning Tech Tree",
       
