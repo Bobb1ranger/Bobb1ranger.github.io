@@ -195,7 +195,8 @@
             "improvement": "Explicit KL-constrained policy updates.",
             "solves": "Prevents catastrophic policy collapse.",
             "prerequisites": [
-                "NPG"
+                "NPG",
+                "AC"
             ]
         },
         {
