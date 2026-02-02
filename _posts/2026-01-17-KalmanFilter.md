@@ -8,12 +8,13 @@ related_posts: false
 authors:
     - name: Yuanji Zou
       url: "https://bobb1ranger.github.io/"
+---
 
 ---
 
 # 1. **Math Formulation of the Kalman Filter**
 
-Consider the dynamical system:
+Consider the discrete-time dynamical system:
 
 $$
 \begin{align*}
