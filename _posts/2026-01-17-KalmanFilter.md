@@ -5,9 +5,13 @@ date: 2026-01-19 10:44:00+0000
 description: A recap of the Kalman Filter algorithm for state estimation. It also covers how it is related to the optimal state-feedback control problem.
 tags: control math optimization
 related_posts: false
+authors:
+    - name: Yuanji Zou
+      url: "https://bobb1ranger.github.io/"
+
 ---
 
-# 1. Math Formulation of the Kalman Filter:
+# 1. **Math Formulation of the Kalman Filter**
 
 Consider the dynamical system:
 
@@ -78,7 +82,7 @@ This Riccati equation is independent of the control input matrix $$B_k$$, since 
 
 ---
 
-# 2. Optimality of the Kalman Filter:
+# 2. **Optimality of the Kalman Filter**
 
 The optimality of the Kalman filter is very strong, but also conditional.
 
@@ -115,7 +119,7 @@ Even without Gaussianity, the Kalman filter is still optimal among all linear un
 
 ---
 
-# 3. Extended Kalman Filter (EKF):
+# 3. **Extended Kalman Filter (EKF)**
 
 For nonlinear systems, the Extended Kalman Filter (EKF) linearizes the system around the current estimate to apply the Kalman filter framework. The EKF approximates the state transition and measurement functions using their Jacobians.
 
@@ -163,8 +167,8 @@ $$
 There is no optimality guarantee for EKF in general, but it works well in practice for many applications. For slowly varying nonlinear systems, EKF can provide good approximations to the optimal Bayesian filter.
 
 ---
-
-# 4. Relation to Optimal State-Feedback Control:
+<!-- 
+# 4. ** Relation to Optimal State-Feedback Control **
 
 Define the estimation error:
 
@@ -188,4 +192,4 @@ What we measure is
 
 $$
 \hat{y}_k = z_k - C_k \hat{x}_{k|k-1} = C_k e_k + v_k
-$$
+$$ -->
