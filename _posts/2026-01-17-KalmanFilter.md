@@ -14,6 +14,21 @@ authors:
 
 # 1. **Math Formulation of the Kalman Filter**
 
+The following table summarizes the notations:
+
+**Table 1. Kalman filter state estimation notation** 
+
+| Notation             | Name / Term              | Meaning                                                                  |
+|----------------------|--------------------------|--------------------------------------------------------------------------|
+| $$x_k$$              | True state               | The actual (unknown) system state at time step $$k$$                          |
+| $$\hat{x}_{k\vert k-1}$$  | A priori estimate        | Estimate of $$x_k$$ using observations up to time $$k-1$$                 |
+| $$\hat{x}_{k\vert k}$$    | A posteriori estimate    | Updated estimate of $$x_k$$ after incorporating measurement at time $$k$$ |
+| $$e_{k\vert k-1}$$        | A priori error           | $$x_k - \hat{x}_{k\vert k-1}$$ (prediction error before seeing $$z_k$$)   |
+| $$e_{k\vert k}$$   | A posteriori error       | $$x_k - \hat{x}_{k\vert k}$$ (estimation error after update)                     |
+| $$P_{k\vert k-1}$$ | A priori covariance      | $$\mathbb{E}[e_{k\vert k-1} e_{k\vert k-1}^T]$$ (uncertainty before measurement) |
+| $$P_{k\vert k}$$   | A posteriori covariance  | $$\mathbb{E}[e_{k \vert k} e_{k\vert k}^T]$$ (uncertainty after measurement)     |
+
+
 Consider the discrete-time dynamical system:
 
 $$
@@ -23,7 +38,13 @@ z_k & = C_k x_k + v_k
 \end{align*}
 $$
 
-where $$x_k$$ is the state vector at time step $$k$$, $$u_k$$ is the control input, $$z_k$$ is the measurement vector, and $$w_k$$ and $$v_k$$ are process and measurement noise, respectively. The noise terms are assumed to be zero-mean Gaussian with covariances $$Q_k$$ and $$R_k$$.
+where $$x_k$$ is the state vector at time step $$k$$, $$u_k$$ is the control input, $$z_k$$ is the measurement vector, and $$w_k$$ and $$v_k$$ are process and measurement noise, respectively. The noise terms $$ w_k$$ and $$ v_k $$ are assumed to be zero-mean Gaussian with covariances $$Q_k$$ and $$R_k$$.
+
+$$
+\begin{equation*}
+\mathrm{cov} [w_k] = Q_k;\quad \mathrm{cov} [v_k] = R_k.
+\end{equation*}
+$$
 
 A priori estimate (prediction):
 
@@ -38,36 +59,40 @@ The innovation (prefit residual) and its covariance are given by:
 
 $$
 \begin{align*}
-\hat{y}_{k} = z_k - C_k \hat{x}_{k|k-1} \\
-S_k = C_k P_{k|k-1} C_k^T + R_k
+\hat{y}_{k} & = z_k - C_k \hat{x}_{k|k-1} \\
+S_k & \doteq \mathrm{cov}[\hat{y}_k] = C_k P_{k|k-1} C_k^T + R_k
 \end{align*}
 $$
 
 Intuitively, the innovation represents the discrepancy between the actual measurement and the predicted measurement based on the a priori state estimate.
 
-Kalman gain:
+The Kalman gain used to update the posteriori estimate is given by $$~\eqref{eqn:KalmanGain}$$:
 
 $$
+\begin{equation}\label{eqn:KalmanGain}
 K_k = P_{k|k-1} C_k^T S_k^{-1}
+\end{equation}
+$$
+
+A posteriori estimate (update):
+
+$$
+\begin{align*}
+\hat{x}_{k\vert k} & = \hat{x}_{k\vert k-1} + K_k \hat{y}_k = (I - K_k C_k) \hat{x}_{k\vert k-1} + K_k z_k, \\
+P_{k|\vert k} & = (I - K_k C_k) P_{k\vert k-1} = (I - K_k C_k) P_{k\vert k-1} (I - K_k C_k)^T + K_k R_k K_k^T.
+\end{align*}
 $$
 
 The gain balances the trust between the a priori estimate and the new measurement. Intuitively:
 *   If the measurement noise covariance $$R_k$$ is small (i.e., measurements are reliable), the Kalman gain will be higher, giving more weight to the measurement.
 *   If the priori estimate covariance $$ {P}_{k \vert k-1}$$ is small (i.e., the model prediction is reliable), the Kalman gain will be lower, giving more weight to the model prediction.
 
-A posteriori estimate (update):
+The posteriori covariance matrix $${P}_{k \vert k}$$ can also be given as a more symmetric form:
 
 $$
-\begin{align*}
-\hat{x}_{k|k} & = \hat{x}_{k|k-1} + K_k \hat{y}_k = (I - K_k C_k) \hat{x}_{k|k-1} + K_k z_k, \\
-P_{k|k} & = (I - K_k C_k) P_{k|k-1} = (I - K_k C_k) P_{k|k-1} (I - K_k C_k)^T + K_k R_k K_k^T.
-\end{align*}
-$$
-
-The posteriori covariance matrix $${P}_{k \vert k}$$ can also be given as:
-
-$$
-P_{k|k} = P_{k \vert k-1} - P_{k \vert k-1} C_k^T (C_k P_{k \vert k-1} C_k^T + R_k)^{-1} C_k P_{k \vert k-1},
+\begin{equation*}
+P_{k\vert k} = P_{k \vert k-1} - P_{k \vert k-1} C_k^T (C_k P_{k \vert k-1} C_k^T + R_k)^{-1} C_k P_{k \vert k-1},
+\end{equation*}
 $$
 
 which leads to the priori covariance update as a discrete-time Riccati equation:
