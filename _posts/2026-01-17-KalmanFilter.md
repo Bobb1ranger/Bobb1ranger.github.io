@@ -79,7 +79,7 @@ A posteriori estimate (update):
 $$
 \begin{align*}
 \hat{x}_{k\vert k} & = \hat{x}_{k\vert k-1} + K_k \hat{y}_k = (I - K_k C_k) \hat{x}_{k\vert k-1} + K_k z_k, \\
-P_{k|\vert k} & = (I - K_k C_k) P_{k\vert k-1} = (I - K_k C_k) P_{k\vert k-1} (I - K_k C_k)^T + K_k R_k K_k^T.
+P_{k\vert k} & = (I - K_k C_k) P_{k\vert k-1} = (I - K_k C_k) P_{k\vert k-1} (I - K_k C_k)^T + K_k R_k K_k^T.
 \end{align*}
 $$
 
@@ -156,7 +156,6 @@ z_k & = h(x_k) + v_k
 \end{align*}
 $$
 
-
 Predict:
 
 $$
@@ -193,29 +192,99 @@ $$
 There is no optimality guarantee for EKF in general, but it works well in practice for many applications. For slowly varying nonlinear systems, EKF can provide good approximations to the optimal Bayesian filter.
 
 ---
-<!-- 
-# 4. ** Relation to Optimal State-Feedback Control **
+ 
+# 4. **Relation to Optimal State-Feedback Control**
 
-Define the estimation error:
+## 4.1 Equivalent LQG formulation
 
-$$
-e_k = x_k - \hat{x}_{k|k} 
-$$
-
-Consider a posteriori estimate law $$q_k$$:
+A posterior estimation error and priori estimation error:
 
 $$
-\hat{x}_{k|k}  = \hat{x}_{k|k - 1} + q_k
+\begin{align*}
+e_{k\vert k} & = x_k - \hat{x}_{k\vert k} \\
+e_{k\vert k - 1} & = x_k - \hat{x}_{k\vert k-1}
+\end{align*}
 $$
 
-Then
+The innovation at step $$k$$ is just their difference
 
 $$
-e_k = x_k - \hat{x}_{k|k - 1} - q_k = A_{k-1} e_{k-1} + w_{k-1} - q_k
+\begin{equation}
+\nu_k = e_{k\vert k-1} - e_{k\vert k}
+\end{equation}
 $$
 
-What we measure is
+We initialize the A priori estimate at step $$0$$ to be $$\hat{x}_{0\vert -1} = \mathbf{0}$$, which gives $$e_{k\vert k - 1} = x_0$$.
+Rewrite the system dynamics difference equation to formulate a LQG-like problem, assuming $$A$$, $$C$$ matrices are time-invariant:
 
 $$
-\hat{y}_k = z_k - C_k \hat{x}_{k|k-1} = C_k e_k + v_k
-$$ -->
+\begin{align*}
+e_{k + 1\vert k} & = A e_{k\vert k - 1} + w_k - A \nu_k \\
+e_{k\vert k} & = e_{k\vert k - 1} - \nu_k \\
+y_k & = C e_{k\vert k - 1} + v_k \\
+\end{align*}
+$$
+
+At each time-step, to optimally estimate $$x_k$$, we need to optimize by measuring the noisy projection of $$e_{k\vert k - 1}$$ its history:
+
+$$
+J_k = \mathrm{trace} \left( \mathbb{E} \left[ e_{k\vert k} e_{k\vert k}^T \mid y_0, y_1, y_2, \ldots, y_k \right] \right) 
+$$
+
+Only the terminal state is involved in the cost function, which means we don't care about the intermediate steps. Those intermediate estimates and covariances are just computational artifacts.
+*  You can compute everything at time $$k$$ in one shot(To be extreme) or compute it recursively step-by-step (Kalman Filtering)
+*  The result is identical by either strategy.
+
+This is generally the nature of estimation task - **Later actions can always correct previous non-optimality and there are infinite-many combinations of $$\{\mu_0,..., \mu_k\}$$ to achieve the optimal terminal estimation accuracy given a fixed horizon $$k$$**. 
+In other words, we don't need to compromise for the future.
+**It's allowable to be greedy at each step and iteratively obtain the optimal terminal estimate.** We can modify the cost into an sum over the horizon without affecting the terminal optimality. 
+
+$$
+\begin{equation}
+\begin{split}
+J_k = & \min \sum_{j = 1}^{k} \mathrm{trace} \left( \mathbb{E} \left[ e_{j\vert j} e_{j\vert j}^T \mid y_0, y_1, y_2, \ldots, y_j \right] \right) \\
+= & J_{k - 1} + \min \mathrm{trace} \left( \mathbb{E} \left[e_{k\vert k} e_{k\vert k}^T \mid y_0, y_1, y_2, \ldots, y_k \right] \right)
+\end{split}
+\end{equation}
+$$
+
+Minimizing this sum will ensure the optimal estimates at all steps.
+
+## 4.2 Constraints on the input sequence
+
+In general，$$\mu_k = f(y_0, y_1, y_2, \ldots, y_k)$$. We hypothize that it's a linear combination of observations $$y_0, ..., y_k$$.
+
+$$
+\begin{equation}
+\mu_k = L_0 y_0 + ... + L_k y_k = L Y_k
+\end{equation}
+$$
+
+The primal optimization problem is
+
+$$
+\begin{align}
+J(L) = & \min_{L}  \mathrm{trace} \left(\mathbb{E}\left[e_{k\vert k}e_{k\vert k}^\top\right]\right) \\
+\mathbb{E}\left[e_{k\vert k}e_{k\vert k}^\top\right] = & \mathbb{E}\left[(e_{k\vert k - 1} - L Y_k) (e_{k\vert k - 1} - L Y_k)^\top\right] \\
+= & \mathbb{E}\left[e_{k\vert k -1}e_{k\vert k-1}^\top\right] - \mathbb{E}\left[e_{k\vert k - 1}Y_k^\top\right] L^\top - L \mathbb{E}\left[Y_k e_{k\vert k - 1}^\top\right] + L \mathbb{E}\left[Y_k Y_k^\top\right] L^\top \\
+\end{align}
+$$
+
+Define $$P_{eY} = \mathbb{E}\left[e_{k\vert k - 1}Y_k^\top\right]$$ and $$P_Y = \mathbb{E}\left[Y_k Y_k^\top\right]$$. Then
+
+$$
+\begin{equation*}
+\mathbb{E}\left[e_{k\vert k}e_{k\vert k}^\top\right] = P_x - P_{eY} L^\top - L P_{eY}^\top + L P_Y L^\top.
+\end{equation*}
+$$
+
+By taking derivatives over $$L$$, we find that the optimal $$L^\circ = $P_{eY} P_Y^{-1}$$. By such selection of $$L$$,
+
+$$
+\begin{equation}
+\mathbb{E}\left[e_{k\vert k}Y_k^\top\right] = \mathbb{E}\left[(e_{k\vert k - 1} - L Y_k)Y_k^\top\right] = \mathbf{0}.
+\end{equation}
+$$
+
+This suggests that each A posteriori estimate has an error orthogonal to all the history observations by expectation.
+
