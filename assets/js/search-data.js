@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-kalman-filter-recap",
+        },{id: "post-agentic-ai-part-i-prompt-engineering-amp-chain-of-thought",
+      
+        title: "Agentic AI (Part I) -- Prompt Engineering &amp; Chain of Thought",
+      
+      description: "This personal learning note includes the basic ideas and concepts in Prompt Engineering as well as the answers for these muddiest questions.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/AI_agent/";
+        
+      },
+    },{id: "post-kalman-filter-recap",
       
         title: "Kalman Filter Recap",
       
