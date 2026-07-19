@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-agentic-ai-part-i-prompt-engineering-amp-chain-of-thought",
+        },{id: "post-agentic-ai-part-ii-tools-and-function-calling",
+      
+        title: "Agentic AI (Part II) -- Tools and function calling",
+      
+      description: "This personal learning note walks through how to build a customized agent with local/external tools.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/AI_agent_2/";
+        
+      },
+    },{id: "post-agentic-ai-part-i-prompt-engineering-amp-chain-of-thought",
       
         title: "Agentic AI (Part I) -- Prompt Engineering &amp; Chain of Thought",
       
@@ -45,7 +56,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/AI_agent/";
+          window.location.href = "/blog/2026/AI_agent_1/";
         
       },
     },{id: "post-kalman-filter-recap",
