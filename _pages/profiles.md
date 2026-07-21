@@ -14,15 +14,15 @@ profiles:
     content: about_yuanji.md
     image_circular: false # crops the image to make it circular
     more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
+        <p>2-127 Kenneth H.Keller Hall</p>
+        <p>200 Union Street Se</p>
+        <p>Minneapolis, MN 55455</p>
   - align: left
     image: prof_pic.jpg
     content: about_yuanji.md
     image_circular: false # crops the image to make it circular
     more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
+        <p>2-127 Kenneth H.Keller Hall</p>
+        <p>200 Union Street Se</p>
+        <p>Minneapolis, MN 55455</p>
 ---
